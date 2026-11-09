@@ -4,7 +4,7 @@ Seeded 2026-11-06. Every entry below is **ADOPTED or CERTIFIED** in the
 fleet's working program and exported from its private ledger (cited per
 entry by experiment id + tuning entry number). The 2026-11-04 →
 2026-11-06 batches were measured on the **Mint** platform; the
-2026-11-08 batch was measured on **Fortress** (each Fortress entry
+2026-11-08 batches were measured on **Fortress** (each Fortress entry
 says so, and cites its platform page).
 
 ## 2026-11-04 — the TUNING #97 adoption batch
@@ -49,12 +49,31 @@ day by the program's certification review.
 | [Layer-split policy on mixed GPUs](2026-11-08-layer-split-policy-mixed-gpus.md) | Splitting a fittable 8B loses 74%; the 14B split weighted ts 2,1 toward the fast card hits 12.43 tok/s (+43% over even); tensor split runs and validates but is ~2.2× slower |
 | [MoE placement: dual-GPU split](2026-11-08-moe-placement-dual-gpu-split.md) | The 13.8 GB 30B MoE split across both cards is fastest (22.57) *and* lightest on RAM (784 MiB RSS); best one-card placement is RTX + full CPU offload + 4 GiB expert cache (17.71) |
 | [Expert cache capacity cliff](2026-11-08-moe-expert-cache-capacity-cliff.md) | Decode vs cache size: 4.65 → 2.70 at 1 GiB (−42%) → 6.30 at 2 GiB → 17.71 at 4 GiB; no prefill tax; cache cannot combine with partial `-ncmoe` offload in this build; hit rate not instrumented, none claimed |
-| [Two cards are two lanes](2026-11-08-two-cards-two-lanes-replicas.md) | Concurrency and same-model replicas run at ~101% of the sequential sum; replicas beat the best single card +22% and the split of the same model 4.7× |
+| [Two cards are two lanes](2026-11-08-two-cards-two-lanes-replicas.md) | Concurrency and same-model replicas run at ~101% of the sequential sum; replicas beat the best single card +22% and the split of the same model 4.7× (np4 figure corrected by F-45 — timings-sum; wall ≈1.0×) |
 | [NUMA is a no-op under WSL](2026-11-08-numa-noop-dual-socket-wsl.md) | Placement is flat (±2.6%) on both the GPU split and the CPU-offload path; the F-29 `distribute` wedge is scoped as surface-specific |
+
+## 2026-11-08 — Fortress R11 (speculative decoding + ceilings)
+
+Measured on **Fortress** (same settled fingerprint and B3 probe as
+the R10 batch above), extending the certified R10 controls:
+speculative decoding, the expert-cache and context ceilings,
+split-server parallelism re-measured by wall clock, MoE prefill,
+and a harness cross-check of F-40. All seven certified the same
+day by the program's certification review.
+
+| Finding | One-line result |
+|---|---|
+| [Speculative decoding: draft length](2026-11-08-speculative-decoding-draft-length.md) | On the solo 8B, a 0.6b draft at n-max 4 *loses* 14% despite 95% acceptance; n-max 16 wins **+42%** — draft length, not acceptance, is the deciding variable; attaching a draft costs ~20% of prefill at every length |
+| [Speculative decoding fails on splits](2026-11-08-speculative-decoding-splits-fail.md) | GPU draft on the 14B split cannot allocate (896 MiB MTP context, OOM at all lengths); CPU draft collapses −70…−90%; the MoE split loses 77% at n-max 4 and **crashes 2/2 at n-max 8** (`ggml-cuda.cu:111: CUDA error: out of memory` in decode) — with the substituted 0.6b draft declared (qwen3:4b absent from the store, download cap) |
+| [Expert-cache ceiling on 8 GB](2026-11-08-expert-cache-ceiling-8gb.md) | RTX cache init fails at 6144 MiB — the legal range ends between 4096 (works) and 6144; on the M4000 the 4096 cache pays **+57%** (4.98 → 7.83), so F-38's ordering stands |
+| [Split parallelism: wall-clock correction](2026-11-08-split-parallelism-wall-clock-correction.md) | Both metrics reported: the MoE split is timings-sum 36.15 / **wall 22.45** at np4 and ≈single-stream at np8 — F-40's "1.60×" corrected to **wall ≈1.0×**; the 14B split at np4 scales a real **2.02× by wall** (25.09 vs 12.43) |
+| [14B split context ceiling](2026-11-08-14b-split-context-ceiling.md) | ctx 32768 fails at init (`failed to allocate buffer for kv cache`); KV sized by per-card VRAM deltas (≈993 MiB per +8192 tokens — no KV log line at default verbosity); at 16384 B3 is unchanged and decode at 4,241-token depth pays only −14% |
+| [MoE prefill: cache convergence](2026-11-08-moe-prefill-cache-convergence.md) | Longprobe (4,241 tok): dual split prefill 154.58 vs one-card cache arm 136.52 (+13%, decode +41%, 1/18th the RAM) — but the gap collapses from +73% at B3 as prompts grow; one-card prefill is monotone in cache size (106.53 → 116.5 → 136.52) |
+| [Concurrency cross-check](2026-11-08-concurrency-cross-check.md) | F-40's lossless concurrency reproduces through CUDA_VISIBLE_DEVICES-masked replica instances: 77.99 / 77.74 vs the 77.42 sequential sum (≈101%) — with the substituted 3B+8B pair declared and the specified qwen3:4b hetero-replica measurement explicitly **NOT RUN** |
 
 ## Not seeded (deliberately)
 
-- **Fortress findings outside the R10 battery** — the pre-build rounds
+- **Fortress findings outside the R10/R11 batteries** — the pre-build rounds
   (F-01 → F-34) are not exported as standalone findings; the two that
   the R10 certification directly touched appear above (the F-24
   correction, F-36) or are cited inside the R10 entries. The platform

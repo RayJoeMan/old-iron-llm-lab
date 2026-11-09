@@ -25,6 +25,23 @@ R10-1 (F-35). The split-server arm runs the dual-split MoE config
 
 ## Measured result
 
+> **CORRECTION (2026-11-08, certified as F-45):** the
+> split-server parallelism figure below — the dual-split MoE
+> server at `-np 4` serving "36.15 tok/s aggregate = 1.60× its
+> single-stream rate" — is a **timings-sum** figure (the sum of
+> the per-stream eval rates in the server timings). R11
+> re-measured the same configuration by **wall clock**: total
+> eval tokens ÷ batch wall = 22.45 tok/s against the 22.57
+> single-stream rate, i.e. **wall-clock scaling ≈1.0×** — the
+> MoE split is already compute-saturated single-stream, and
+> parallel slots only subdivide it. The original measured text
+> below is unchanged; read the "1.60×" as timings-sum only.
+> The dual-model concurrency and replica findings in this file
+> were measured with separate instances on separate cards and
+> are **unaffected** (and reproduce under a different harness —
+> see the F-48 cross-check). Full treatment:
+> [Split-server parallelism is metric-sensitive](2026-11-08-split-parallelism-wall-clock-correction.md).
+
 **Dual-model concurrency (R10-4)** — llama3.2:3b on the M4000 +
 qwen3:8b on the RTX, simultaneous:
 
