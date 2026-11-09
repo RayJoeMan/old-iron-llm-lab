@@ -54,3 +54,16 @@ hetero-replica measurement as originally specified — it waits
 on the model being present in the store within a download
 budget, and no qwen3:4b concurrency figure is claimed anywhere
 in this program until it is measured.
+
+## Update (Nov 9, 2026)
+
+The hetero-replica measurement marked NOT RUN above has since
+been run as specified — qwen3:4b on the M4000 + qwen3:8b on
+the RTX, the pair this file's Method section originally
+called for — and published as
+[heterogeneous replicas as specified](2026-11-09-heterogeneous-replicas-as-specified.md)
+(F-49): concurrent aggregates of 98–99% of the sequential sum,
+reproducing this file's lossless-concurrency result for the
+specified pair. The NOT RUN status in the text above is
+historical — it was accurate when this file was published on
+2026-11-08.

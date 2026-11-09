@@ -69,7 +69,26 @@ day by the program's certification review.
 | [Split parallelism: wall-clock correction](2026-11-08-split-parallelism-wall-clock-correction.md) | Both metrics reported: the MoE split is timings-sum 36.15 / **wall 22.45** at np4 and ≈single-stream at np8 — F-40's "1.60×" corrected to **wall ≈1.0×**; the 14B split at np4 scales a real **2.02× by wall** (25.09 vs 12.43) |
 | [14B split context ceiling](2026-11-08-14b-split-context-ceiling.md) | ctx 32768 fails at init (`failed to allocate buffer for kv cache`); KV sized by per-card VRAM deltas (≈993 MiB per +8192 tokens — no KV log line at default verbosity); at 16384 B3 is unchanged and decode at 4,241-token depth pays only −14% |
 | [MoE prefill: cache convergence](2026-11-08-moe-prefill-cache-convergence.md) | Longprobe (4,241 tok): dual split prefill 154.58 vs one-card cache arm 136.52 (+13%, decode +41%, 1/18th the RAM) — but the gap collapses from +73% at B3 as prompts grow; one-card prefill is monotone in cache size (106.53 → 116.5 → 136.52) |
-| [Concurrency cross-check](2026-11-08-concurrency-cross-check.md) | F-40's lossless concurrency reproduces through CUDA_VISIBLE_DEVICES-masked replica instances: 77.99 / 77.74 vs the 77.42 sequential sum (≈101%) — with the substituted 3B+8B pair declared and the specified qwen3:4b hetero-replica measurement explicitly **NOT RUN** |
+| [Concurrency cross-check](2026-11-08-concurrency-cross-check.md) | F-40's lossless concurrency reproduces through CUDA_VISIBLE_DEVICES-masked replica instances: 77.99 / 77.74 vs the 77.42 sequential sum (≈101%) — with the substituted 3B+8B pair declared and the specified qwen3:4b hetero-replica measurement explicitly **NOT RUN** (closed by F-49, 2026-11-09) |
+
+## 2026-11-09 — Fortress R11.5 (speculative-decoding closure)
+
+Measured on **Fortress** (same settled fingerprint and B3 probe as
+the R10/R11 batches above), an overnight closure battery between
+the CPU-swap hardware sessions — deliberately GPU-side only, so
+every result stays valid across the swap. It finishes the three
+questions the R11 battery left open: the far side of the
+draft-length curve, draft placement across devices, whether a
+mostly-one-card 14B can host a draft at all — and it runs the one
+measurement F-48 had to leave NOT RUN. All four certified by the
+program's certification review.
+
+| Finding | One-line result |
+|---|---|
+| [Heterogeneous replicas as specified](2026-11-09-heterogeneous-replicas-as-specified.md) | The pair F-48 had to substitute away from — qwen3:4b (M4000) + qwen3:8b (RTX) — runs concurrently at **98–99% of its sequential sum** (71.42 / 71.95 vs 72.69); closes F-48's NOT RUN item, the last open arm of the R11 battery |
+| [Draft-length plateau at 16](2026-11-09-speculative-decoding-draft-length-plateau.md) | The F-42 curve is flat from 16 to 32 (79.02 / 78.56 / 80.11; acceptance 0.82 → 0.65): the n16 control reproduces F-42 exactly (79.02 vs 78.69, acceptance identical at 0.8194), and F-42's n-max 16 rule stands bounded on both sides |
+| [Cross-device draft is harmful](2026-11-09-cross-device-draft-harmful.md) | Draft on the M4000, target on the RTX (VRAM-verified placement): eval 30.7 — **−61% vs same-card drafting and −44% vs no draft at all**; on this host speculative decoding is a same-card technique |
+| [14B partial offload + spec: collapse](2026-11-09-14b-partial-offload-spec-collapse.md) | A mostly-one-card 14B *can* host a draft — load ladder ngl 32 fails, ngl 28 loads — but decodes at **1.33 / 0.79 tok/s**, the worst 14B configuration measured; the file also records the run's channel-integrity incident (a phantom completion notice, discarded; only JSON-verified figures ledgered) |
 
 ## Not seeded (deliberately)
 
