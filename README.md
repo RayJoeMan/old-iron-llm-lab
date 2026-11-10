@@ -1,8 +1,9 @@
 # Fleet Findings — measured results from a home-lab LLM fleet
 
-> **Status: STAGING DRAFT (2026-11-06).** This folder is a local staging scaffold for a
-> proposed public repository. Nothing here has been published, pushed, or sent anywhere.
-> Whether this becomes a public repo at all is an open decision.
+> **Status: PUBLIC (since 2026-11-06).** Contents current as of
+> 2026-11-10: the Mint adoption batches, the Fortress certified
+> batteries R10–R17, and one explicitly INTERIM page for the
+> still-running R19 battery.
 
 ## What this is
 
@@ -72,15 +73,26 @@ evals/          descriptions of the frozen eval sets behind the findings
 
 See `STRUCTURE.md` for the full tree and the conventions for adding an entry.
 
-## Contents at staging (2026-11-06)
+## Contents (2026-11-10)
 
-- **13 seeded findings**, all from the Mint lane's adopted/certified record:
-  the TUNING #97 adoption batch (6 items, 2026-11-04), the B4 stack brief (#138)
-  and filler-fact scanner (#139) adoptions (2026-11-05), and the five adoption
-  filings of 2026-11-06.
-- **Fortress content is provisional only**: a platform fingerprint page marked
-  PROVISIONAL / PRE-BUILD. The Fortress tuning chain (r6, 150 jobs) was still
-  running at staging time and its hardware is not settled (CPU swap and GPU
-  installs pending), so **no Fortress findings are seeded** — only platform facts.
-- **1 contribution draft**: a llama.cpp bug report (see `contributions/`),
-  marked DRAFT — NOT SENT.
+- **53 finding entries** in `findings/` (see `findings/README.md`
+  for the index):
+  - **16 Mint findings**, all adopted: the TUNING #97 batch
+    (2026-11-04), adoptions #138/#139 (2026-11-05), the five
+    adoption filings of 2026-11-06, and the 2026-11-09 adoptions
+    (#221 restate-then-label, #234 chunk-fuse, #236 de-noising
+    band).
+  - **36 Fortress findings**, all certified: batteries R10
+    (F-35 → F-41), R11 (F-42 → F-48), R11.5 (F-49 → F-52), R15
+    (F-53 → F-58), R16 (F-59 → F-64, plus the T6/T7 void arms
+    filed as void), and R17 (F-65 → F-69, the replication/audit
+    battery).
+  - **1 INTERIM page**: battery R19 (the 128 GB oversized-model
+    proof) is still running; its completed arms are published as
+    a single interim entry with no F-numbers, pending the
+    battery audit.
+- **Platform pages settled for both machines** — the Fortress
+  page records the current (2026-11-10) fingerprint and the
+  2026-11-08 fingerprint the R10–R17 findings cite.
+- **1 contribution draft**: a llama.cpp bug report (see
+  `contributions/`), marked DRAFT — NOT SENT.

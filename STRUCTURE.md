@@ -9,7 +9,7 @@ fleet-findings-repo/
 ├── platforms/
 │   ├── README.md              — why fingerprints gate every finding
 │   ├── mint.md                — Mint (ASUS ROG GL752VW) fingerprint + baselines — SETTLED
-│   └── fortress-provisional.md— Fortress (HP Z820) fingerprint — PROVISIONAL / PRE-BUILD
+│   └── fortress-provisional.md— Fortress (HP Z820) fingerprint — SETTLED (filename kept from the provisional era)
 ├── findings/
 │   ├── README.md              — index of seeded findings + what's not seeded (and why)
 │   └── YYYY-MM-DD-<slug>.md   — one adopted/certified result per file

@@ -5,8 +5,8 @@ names the platform page (and fingerprint state) it was measured under.
 
 | Platform | State | Notes |
 |---|---|---|
-| [Mint](mint.md) | **Settled** | Hardware static; the experiment program's home. All 13 seeded findings were measured here. |
-| [Fortress (provisional)](fortress-provisional.md) | **PROVISIONAL / PRE-BUILD** | Hardware not settled (CPU swap + GPU installs pending; tuning chain still running at staging). Platform facts only — no findings seeded. |
+| [Mint](mint.md) | **Settled** | Hardware static; the experiment program's home. 16 of the seeded findings were measured here. |
+| [Fortress](fortress-provisional.md) | **Settled — 2026-11-10 fingerprint** | Filename kept from the provisional era. Hardware settled 2026-11-09 (E5-2660 v2 pair, 3 GPUs: 2× RTX 4000 + M4000, NVMe model drive). The page records both the current fingerprint and the 2026-11-08 fingerprint the R10–R17 findings cite. |
 
 Fingerprint discipline, learned the hard way: a silent platform change can
 break a lane without any visible failure — on the Mint, a quantized-KV-cache

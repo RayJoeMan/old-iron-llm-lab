@@ -90,14 +90,93 @@ program's certification review.
 | [Cross-device draft is harmful](2026-11-09-cross-device-draft-harmful.md) | Draft on the M4000, target on the RTX (VRAM-verified placement): eval 30.7 — **−61% vs same-card drafting and −44% vs no draft at all**; on this host speculative decoding is a same-card technique |
 | [14B partial offload + spec: collapse](2026-11-09-14b-partial-offload-spec-collapse.md) | A mostly-one-card 14B *can* host a draft — load ladder ngl 32 fails, ngl 28 loads — but decodes at **1.33 / 0.79 tok/s**, the worst 14B configuration measured; the file also records the run's channel-integrity incident (a phantom completion notice, discarded; only JSON-verified figures ledgered) |
 
+## 2026-11-09 — Fortress R15 (serving & depth)
+
+Measured on **Fortress** (same settled fingerprint and B3 probe as
+the R10/R11 batches above). All concurrency figures are wall-clock
+aggregates (the F-45 rule). All six certified by the program's
+certification review; last battery recorded before the CPU swap —
+pre-swap v1 controls.
+
+| Finding | One-line result |
+|---|---|
+| [14B split serving flattens after np4](2026-11-09-14b-split-serving-flattens-np4.md) | Wall aggregate 11.62 → 18.07 → 24.99 → 26.96 across np1/2/4/8 — np4 replicates the F-45 control (25.09); +8% only to np8 (F-53) |
+| [Solo-8B serving peaks at np4](2026-11-09-solo-8b-serving-peak-np4.md) | 52.46 → 83.25 → **107.68** → 101.44: aggregate peaks at 4 slots, **2.05×** single-stream, and recedes at np8 (F-54) |
+| [MoE split saturation; timings overstate ~1.9×](2026-11-09-moe-split-saturation-timings-overstate.md) | Wall saturates by np4 (23.56) while timings sums reach 43.71 — the widest wall-vs-timings gap in the program (F-55) |
+| [Long decode: KV depth, not thermals](2026-11-09-long-decode-kv-depth-not-thermals.md) | 4× 8,192-token generations: median **43.54**, ~2.8% decline across passes, windowed decay ~48.5 → ~41 with KV growth; RTX peak 85 °C, no cliff (F-56) |
+| [Coder-30B first baseline](2026-11-09-coder-30b-first-baseline.md) | ud-qwen3-coder:30b dual split: prompt 108.0 / eval **22.18** — statistically tied with the instruct MoE in the same placement (F-57) |
+| [Spec decoding collapses on the 4B; sub-1B drafts](2026-11-09-spec-decoding-4b-collapse-sub1b-drafts.md) | The 0.6b draft that wins +42% on the 8B **loses ~75–80% on the 4B** (acceptance 0.10–0.20 vs 0.8194) — the 4B runs draftless; on 8 GB at ctx 8192, same-card drafts are sub-1B only (F-58) |
+
+## 2026-11-09 — Fortress R16 (headroom & ceilings)
+
+Measured on **Fortress** (same fingerprint and probe). F-59 → F-64
+certified by the program's certification review; T6 and T7 produced
+no measurement and are filed as void, per the honesty rules.
+
+| Finding | One-line result |
+|---|---|
+| [Solo-8B context ceiling: 32768](2026-11-09-solo-8b-context-ceiling-32768.md) | ctx 32768 loads **only with q8_0 KV** (7,417 MiB; 29,681-token fill, decode 19.66 at depth); f16 fails; 65536 fails under both quants (F-59) |
+| [KV quantization: cheap insurance solo](2026-11-09-kv-quantization-solo-cheap-insurance.md) | At ctx 16384: f16 53.38 → K-only q8_0 51.97 (−2.6%, −532 MiB) → K+V 50.82 (−4.8%, −1,072 MiB); the split-era kvq8 failure was a split effect, not a quant defect (F-60) |
+| [Expert-cache ceiling bisected](2026-11-09-expert-cache-ceiling-bisected.md) | 5120 MiB loads on **both** cards (RTX eval 29.88, +69% vs 4096; M4000 10.18, +30%); 6144 fails on both — ceiling ∈ (5120, 6144] MiB (F-61) |
+| [Partial offload of the 14B: closed](2026-11-09-partial-offload-14b-closed.md) | Draftless ngl 20/24/28 → 2.10 / 2.53 / 3.14 (ngl 32 fails); beats F-52's with-draft 1.33 but sits at ~¼ of the split — the dual split stands (F-62) |
+| [Solo-8B prefill at 8,481 tokens](2026-11-09-solo-8b-prefill-8481.md) | **1270.29 tok/s** at 8,481 tokens; the ~17k and ~34k arms failed to load — no deeper rates exist, certification scoped to the loadable arm (F-63) |
+| [Embed batch-invariance](2026-11-09-embed-batch-invariance.md) | nomic-embed on the standing Ollama lane: 16.67 / 16.67 / 17.02 docs/s at batch 1 / 8 / 32 — batching buys nothing (F-64) |
+| [R16 void arms (T6, T7)](2026-11-09-r16-void-arms-t6-t7.md) | **VOID — no numbers claimed.** T6: all draft-variety arms died at draft-load VRAM OOM, question open. T7: VL baseline voided by a harness defect (symlinked Ollama manifests rejected); repaired and produced in R17 (F-69) |
+
+## 2026-11-09 — Fortress R17 (replication & audit battery)
+
+Measured on **Fortress** (same fingerprint and probe). R17 was the
+standing ungated filler battery: replicate the certified controls
+under fresh seeds, extend the embed range, and produce the VL
+baseline R16-T7 voided. The battery was audited by **two
+independent audit passes that agree**; F-numbers were assigned at
+this export.
+
+| Finding | One-line result |
+|---|---|
+| [Fresh-seed replicates: controls hold](2026-11-09-fresh-seed-replicates-controls-hold.md) | Solo 8B 54.44 vs 55.29 (**−1.54%, in band**); 14B split 12.44 vs 12.43 (**+0.08%**); MoE split 21.99 vs 22.57 (**−2.57%, outside the ±2% band, low**) — with the 54-token early-EOS caveat on every MoE rep (F-65) |
+| [Soak replicate: thermal baseline](2026-11-09-soak-replicate-thermal-baseline.md) | F-56's soak replicates: median **42.75 vs 43.54 (−1.81%, in band)**; **RTX peak 85 °C — exact match** to the control; the covers-OFF baseline (F-66) |
+| [Dual-card co-soak, one hour](2026-11-09-dual-card-co-soak.md) | Full 3600.6 s, no abort; peaks RTX 85 °C / 124.43 W, M4000 79 °C / 97.94 W; combined wall **65.98 tok/s** — with the JSON-vs-stdout tally discrepancy published, not smoothed (F-67) |
+| [Embed invariance to 128](2026-11-09-embed-invariance-to-128.md) | Batch 64 → **17.02**, batch 128 → **17.09** docs/s: F-64's batch-invariance extends 1 → 128 (F-68) |
+| [VL baseline: RTX only; M4000 launch timeout](2026-11-09-vl-rtx-baseline-m4000-launch-timeout.md) | **PARTIAL.** RTX per-image medians 96.68 / 90.51 / 85.90 / 81.37 — the first Fortress VL control; batch-of-4 arm HTTP 400; M4000 set HTTP 500, cause established: ggml-cuda **launch timeout** in the Maxwell runner, store exonerated (F-69) |
+
+## 2026-11-09 — Mint adoptions (#221 / #234 / #236)
+
+Measured on the **Mint** platform (see `platforms/mint.md`),
+adopted in the 2026-11-09 adoption review. These three complete
+the Mint seed alongside the Nov 4–6 batches.
+
+| Finding | One-line result |
+|---|---|
+| [Restate-then-label classification](2026-11-09-restate-then-label-classification.md) | A ≤8-word reason before the label: **58/60 vs 55/60** (E220), **59/60 vs 56/60** on a fresh set (FF-1) — at 2.16× tokens; the gain is a copy-then-label effect (59/60 reasons were title echoes), adopted as the standing contract (TUNING #221 + #237) |
+| [Chunk-fuse long-source coverage](2026-11-09-chunk-fuse-long-source-coverage.md) | 47k-char fixture: fused coverage **17/20 and 18/20, zero inventions**, stage-1 union 19/20 both seeds — vs single-pass 4/20 truncated; plain fuse is *not* a production final (TUNING #234) |
+| [Mint de-noising band ±2%](2026-11-09-mint-denoising-band.md) | Cross-session shifts ≤0.37%, 44/44 readings in band; at a pinned seed each instrument has exactly **two draws** (cached / uncached) selected by prompt-cache state — the standing measurement constant (TUNING #236) |
+
+## 2026-11-10 — Fortress R19 (INTERIM — battery still running)
+
+| Finding | One-line result |
+|---|---|
+| [R19 INTERIM — 128 GB runs a 120B](2026-11-10-r19-interim-128gb-proof.md) | **INTERIM, no F-numbers.** gpt-oss-120b MXFP4 from system RAM: fit best **6.71**, B3 ngl0 median **6.77**, prefill 19.19 @4k / 26.86 @16k, **28,337-token fill at ctx 32768**; VL **survives on the M4000** at reduced config; r19_5 quality arm captured no content — no verdict claimed; Flash-Next arm pending |
+
 ## Not seeded (deliberately)
 
-- **Fortress findings outside the R10/R11 batteries** — the pre-build rounds
+- **Fortress findings outside the exported batteries** — the pre-build rounds
   (F-01 → F-34) are not exported as standalone findings; the two that
   the R10 certification directly touched appear above (the F-24
-  correction, F-36) or are cited inside the R10 entries. The platform
+  correction, F-36) or are cited inside the R10 entries. Batteries
+  R12–R14 have produced no certified findings yet, and R18 is
+  unaudited — nothing from them is seeded. R19 appears above as a
+  single explicitly INTERIM page with no F-numbers; its findings
+  wait for the battery audit. The platform
   page is `platforms/fortress-provisional.md` (filename kept;
-  contents now the settled 2026-11-08 fingerprint).
+  contents now the settled 2026-11-10 fingerprint — the R10–R17
+  entries cite the 2026-11-08 fingerprint state recorded on that
+  page).
+- **PROPOSED-but-unadopted Mint results** (TUNING #238 think-on,
+  #239 Mint-scale MoE offload, #241/#242 chunk-budget follow-ons,
+  #246 7B VL lane, #247 pin-description contract) — measured and
+  ledgered, but adoption reviews are still owed; per the repo's
+  rule they are not findings and stay out until adopted.
 - **Other adopted Mint results outside the tasked seed set** (e.g. the
   long-input chunking rule, the classification anchor package, the
   structured-drafting model adoption, embedding-dedupe calibration) —
