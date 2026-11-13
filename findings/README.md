@@ -158,6 +158,69 @@ the Mint seed alongside the Nov 4–6 batches.
 |---|---|
 | [R19 INTERIM — 128 GB runs a 120B](2026-11-10-r19-interim-128gb-proof.md) | **INTERIM, no F-numbers.** gpt-oss-120b MXFP4 from system RAM: fit best **6.71**, B3 ngl0 median **6.77**, prefill 19.19 @4k / 26.86 @16k, **28,337-token fill at ctx 32768**; VL **survives on the M4000** at reduced config; r19_5 quality arm captured no content — no verdict claimed; Flash-Next arm pending |
 
+## 2026-11-12 — Fortress Tranche A (session-variable battery, Windows lane)
+
+Measured on **Fortress** — the Windows/Vulkan Ollama
+lane (the :11435 serve-second instance), a different
+serving stack from the WSL llama.cpp batteries above;
+each entry carries its own lane fingerprint. The battery
+asked one question 30 ways: *what actually moves a
+draw?* — pre-registered items A0–A29 plus fillers F1/F2
+from FORTRESS-BACKLOG-2026-11-12.md, scored from the
+on-box RESULTS (3,911 records, 18:30 CT hard stop). The
+A0 preflight gate passed: 23 models in the store incl.
+Qwythos, the serve manifest captured, 3 Trap-60
+permutations frozen. The run's **entire error list is 3
+lines** — the A25 phi4-mini 404s (F-94). All 31 findings
+certified in the 2026-11-12 scoring review; F-numbers
+assigned at this export.
+
+| Finding | One-line result |
+|---|---|
+| [Temp-0.3 replication: PARTIAL](2026-11-12-a1-temp03-replication-partial.md) | B07 and B20 omit in both reps and share one hash — one draw counted twice; the chain's read files the pattern as PARTIAL (F-70) |
+| [Determinism anchor: two draws](2026-11-12-a2-determinism-anchor-two-draws.md) | Three reps, two hashes (`b6db…`, `3c06…`, `3c06…`): the identical-hash premise fails as stated; each draw is itself stable (F-71) |
+| [KV-prefix state changes the draw](2026-11-12-a3-kv-prefix-changes-draw.md) | Call history selects which draw a call lands on — changes = true; became the soak factor (F-72) |
+| [Seed at temp 0](2026-11-12-a4-seed-at-temp0.md) | Seeds 43/1/1234/42 all produce one hash; returning to 42 does not restore the opening draw (F-73) |
+| [Reload draw test, 3B](2026-11-12-a5-reload-draw-test-3b.md) | 6 unload/reload cycles: one hash, strict 47, span 0 — reload is not a session variable (F-74) |
+| [Load history, 3B](2026-11-12-a6-load-history-3b.md) | Eviction-by-14B history: same hash, same 47, span 0 (F-75) |
+| [Co-residency changes the draw](2026-11-12-a7-coresidency-changes-draw.md) | A resident 0.6b beside the 3B moves the session to the second draw — changes = true (F-76) |
+| [num_ctx: no effect](2026-11-12-a8-num-ctx-no-effect.md) | 8192 / 16384 / default: one hash throughout (F-77) |
+| [Prompt-order permutation](2026-11-12-a9-prompt-order-permutation.md) | 3B baseline misses recur 8/7/8 of 8 (item-intrinsic); 8B's recur 2/2/1 (not) (F-78) |
+| [Reload draw test, 8B](2026-11-12-a10-reload-draw-test-8b.md) | 5 cycles at strict 49, span 0 — the 8B's 49 is not reload-borne (F-79) |
+| [8B pool control](2026-11-12-a11-8b-pool-control.md) | 24/24 clean on :11435 — the instance is not A1's confound (F-80) |
+| [Omission rate, Qwythos B07](2026-11-12-a12-omission-rate-qwythos.md) | 15/30 seeds omit the Source-URL line — a 50% stochastic mode (F-81) |
+| [Omission input-specificity](2026-11-12-a13-omission-input-specificity.md) | Bar NOT met: control B01 omits 10/30, so the omission is not B07-specific (F-82) |
+| [Fix line at temp 0.3](2026-11-12-a14-fix-line-temp03.md) | 0/30 omissions with the fix line (vs 15/30 without); card-readout structure caveat filed (F-83) |
+| [Omission model-specificity](2026-11-12-a15-omission-model-specificity.md) | The 8B omits 0/30 on the same input — the behavior is Qwythos's (F-84) |
+| [Reload-block metrology](2026-11-12-a16-reload-block-metrology.md) | Qwythos unmoved across 4 paired blocks (60/57 throughout); the 14B's trap drops 55 → 45 under reload (F-85) |
+| [Qwythos cross-session: CONFIRMED](2026-11-12-a17-qwythos-cross-session-confirmed.md) | Plain 60 ×4, trap 57 ×4 — confirmed as **1 effective draw**, decisive test deferred to B4 (F-86) |
+| [Qwythos think-on cost](2026-11-12-a18-qwythos-think-on-cost.md) | Gate passes 15/15, then plain 13/60 and trap 0/60 — the record's read: "think cost" (F-87) |
+| [Qwythos per-label isolation](2026-11-12-a19-qwythos-per-label-isolation.md) | Of the 3 baseline misses: titles 49 and 11 are item-intrinsic, title 23 is context-induced (F-88) |
+| [8B think-on trap collapse](2026-11-12-a20-8b-think-on-trap-collapse.md) | Strict 0/60 in all 3 cycles, every label 0/12 — think-on breaks the trap contract (F-89) |
+| [The COMEDY dip is not real](2026-11-12-a21-comedy-dip-not-real.md) | Isolated COMEDY-12: think-off 3/12, think-on 3/12 ×3 — identical; dip_real = false (F-90) |
+| [8B think-on plain](2026-11-12-a22-8b-think-on-plain.md) | 60/60 in all 3 cycles, every label 12/12 — think-on's damage is trap-specific (F-91) |
+| [14B think-on (diagnostic)](2026-11-12-a23-14b-think-on.md) | Plain 60, trap 58 (above the think-off 55–56) — the 14B does not collapse (F-92) |
+| [4B bulk-size ladder](2026-11-12-a24-4b-bulk-size-ladder.md) | Chunk 5: 5/5; chunks of 15: 14/0/15/0; chunks of 30: 0/0 — threshold 5, failure is bulk-induced (F-93) |
+| [Fallback spot-check: Gemma + phi void](2026-11-12-a25-fallback-spot-check-gemma-phi.md) | gemma3:4b plain 60 / trap 51 in **both** sessions (bar met); phi4-mini arm **VOID — no data**: 3× HTTP 404, model absent from the :11435 store (F-94) |
+| [14B brief pool parity](2026-11-12-a26-14b-brief-pool-parity.md) | 24/24 clean, 0 leaks — indistinguishable from the 8B control (F-95) |
+| [Endpoint envelope equivalence](2026-11-12-a27-endpoint-equivalence.md) | /api/generate vs /api/chat: strict 60/60 and hash-equal in both blocks; 0 brief diffs in 6 pairs (F-96) |
+| [Instance restart: not a variable](2026-11-12-a28-instance-restart-not-a-variable.md) | Guarded :11435 restart serves the same hash as the reload cycles (F-97) |
+| [Device pinning: stable](2026-11-12-a29-device-pinning-stable.md) | Pinned hashes stable, restore verified; the two-draw selection is session history's, not placement's (F-98) |
+| [Pool-wide omission rate (F1)](2026-11-12-f1-pool-omission-rate.md) | 14 omissions in 120 cards (11.7%) — concentrated per-input, not uniform (F-99) |
+| [Draw-distribution soak (F2)](2026-11-12-f2-draw-distribution-soak.md) | **732 cycles** under KV-prefix cycling: cycle 1 at 52/49, then 731 cycles locked at 3B 47 / 8B 49 (F-100) |
+
+## 2026-11-12 — Mint rulings & certifications (#277 / #278)
+
+Measured on the **Mint** platform (see
+`platforms/mint.md`), from the 2026-11-12 sessions and
+the main-chat rulings the record reserved to it.
+
+| Finding | One-line result |
+|---|---|
+| [Independent checker certification: BAR NOT MET](2026-11-12-e263-phi-checker-bar-not-met.md) | phi4-mini echoes the ruler instead of checking: delivery-parse catch 0/18 and 0/24, false-flags an order of magnitude worse under any parse — slot closed, phi stays metadata-only (TUNING #277) |
+| [phi4-mini drift certificate: CERTIFIED](2026-11-12-e258-phi4mini-drift-certificate.md) | Every structural axis exact, eval in band; the hook axis filed as a **range (30–36)** on a non-deterministic lane, byte-identity expectation dropped (TUNING #278) |
+| [E259-F: SUBSUMED by W8](2026-11-12-e259f-subsumed-by-w8.md) | Closed unrun: its rebalance already is W8's P1 arm on a fresh hash-frozen set at stricter bars; the E259 set is development evidence only (TUNING #278) |
+
 ## Not seeded (deliberately)
 
 - **Fortress findings outside the exported batteries** — the pre-build rounds
@@ -177,6 +240,25 @@ the Mint seed alongside the Nov 4–6 batches.
   #246 7B VL lane, #247 pin-description contract) — measured and
   ledgered, but adoption reviews are still owed; per the repo's
   rule they are not findings and stay out until adopted.
+- **E264 — speculative decoding for block drafting** (TUNING
+  #279): **bar MET and PROPOSED, not adopted** — outputs
+  byte-identical to the non-speculative control in both
+  replicates on the Mint's ik llama-server lane, validator
+  compliance exactly equal, wall −25.4% uncached / −30.7%
+  cached (mean 1.386×), draft acceptance 70.3%. It resolves
+  the #225 exception (speculation certified for exactly one
+  shape — block drafting on the server lane; still barred
+  for metadata, coverage, classification), but per the
+  repo's rule a bar-met proposal is not a finding until the
+  adoption review rules. Scope note, as recorded: the
+  proposal covers the ik CPU server lane only; production
+  drafting runs on the Ollama GPU lane, which E264 neither
+  measured nor displaces.
+- **The W8 fresh edge set** (TUNING #280) is an instrument
+  filing, not a result: the hash-frozen 40-item set that
+  unblocks the decisive W8 run is described in
+  `evals/README.md`. No W8 result is seeded; its ruling is
+  still owed in the working program.
 - **Other adopted Mint results outside the tasked seed set** (e.g. the
   long-input chunking rule, the classification anchor package, the
   structured-drafting model adoption, embedding-dedupe calibration) —
