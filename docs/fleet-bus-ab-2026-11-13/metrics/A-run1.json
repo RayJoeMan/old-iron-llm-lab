@@ -1,0 +1,64 @@
+{
+ "arm": "A",
+ "run": 1,
+ "wall_s": 3600.3,
+ "tasks_total": 18,
+ "tasks_terminal": 11,
+ "lost": [
+  "c1",
+  "c5",
+  "c6",
+  "d1",
+  "d3",
+  "d5",
+  "d6"
+ ],
+ "duplicated_work": {},
+ "validator_pass_first_attempt": {
+  "v6": false,
+  "d2": false,
+  "c2": true,
+  "v5": true,
+  "c3": true,
+  "v4": true,
+  "d4": false,
+  "c4": true,
+  "v3": true,
+  "v2": true,
+  "v1": false
+ },
+ "validator_pass_count": 7,
+ "validator_scored": 11,
+ "work_tokens": 14959,
+ "coord_tokens": 35750,
+ "work_calls": 12,
+ "coord_calls": 33,
+ "coord_prompt_chars": 57046,
+ "work_prompt_chars": 5428,
+ "coord_messages": 51,
+ "coord_bytes": 26661,
+ "kill": {
+  "ts": 1794609105.0631402,
+  "victim_worker": "cc-fortress",
+  "task": "v3",
+  "pid": 166285
+ },
+ "recovery": {
+  "task": "v3",
+  "recovered": true,
+  "latency_s": 794.5
+ },
+ "completion_ts": {
+  "v6": 1794607731.9,
+  "d2": 1794607882.0,
+  "c2": 1794607943.4,
+  "v5": 1794608266.1,
+  "c3": 1794608325.3,
+  "v4": 1794609104.9,
+  "d4": 1794609585.4,
+  "c4": 1794609594.1,
+  "v3": 1794609899.5,
+  "v2": 1794610089.6,
+  "v1": 1794610387.2
+ }
+}
