@@ -1,0 +1,12 @@
+{"last_seq": 24, "posted": 24, "errors": 0}[
+ {
+  "model": "qwen3:8b",
+  "wall_s": 11.9,
+  "eval_count": 130,
+  "tok_s": 10.96
+ },
+ {
+  "model": "qwen3:4b",
+  "error": "timed out"
+ }
+]
