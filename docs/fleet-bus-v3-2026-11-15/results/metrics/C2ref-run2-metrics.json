@@ -1,0 +1,714 @@
+{
+ "arm": "C2",
+ "run": 2,
+ "wall_s": 3163.5,
+ "tasks_total": 18,
+ "tasks_terminal": 16,
+ "tasks_accounted": 18,
+ "lost": [],
+ "duplicated_work": {},
+ "validator_pass_first_attempt": {
+  "c5": true,
+  "d4": true,
+  "v2": true,
+  "v3": true,
+  "d5": true,
+  "c2": true,
+  "c6": true,
+  "d1": false,
+  "c4": true,
+  "d6": false,
+  "c1": true,
+  "v5": true,
+  "v6": false,
+  "v1": false,
+  "d3": true,
+  "v4": true,
+  "d2": false,
+  "c3": true
+ },
+ "validator_pass_count": 13,
+ "validator_scored": 18,
+ "work_tokens": 29557,
+ "coord_tokens": 0,
+ "work_calls": 28,
+ "coord_calls": 0,
+ "failed_calls": 0,
+ "coord_prompt_chars": 0,
+ "work_prompt_chars": 13202,
+ "work_tokens_by_model": {
+  "qwen3:4b": 28557,
+  "qwen3:8b": 1000
+ },
+ "calls_by_model": {
+  "qwen3:4b": 23,
+  "qwen3:8b": 5
+ },
+ "per_task_tokens": {
+  "c5": {
+   "tokens": 796,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 796
+   }
+  },
+  "d4": {
+   "tokens": 1518,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1518
+   }
+  },
+  "v2": {
+   "tokens": 1193,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1193
+   }
+  },
+  "v3": {
+   "tokens": 895,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 895
+   }
+  },
+  "d5": {
+   "tokens": 1257,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1257
+   }
+  },
+  "c2": {
+   "tokens": 491,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 491
+   }
+  },
+  "c6": {
+   "tokens": 429,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 429
+   }
+  },
+  "d1": {
+   "tokens": 2828,
+   "calls": 2,
+   "by_model": {
+    "qwen3:4b": 2828
+   }
+  },
+  "c4": {
+   "tokens": 1379,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1379
+   }
+  },
+  "d6": {
+   "tokens": 2506,
+   "calls": 2,
+   "by_model": {
+    "qwen3:4b": 2506
+   }
+  },
+  "c1": {
+   "tokens": 362,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 362
+   }
+  },
+  "v5": {
+   "tokens": 1270,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1270
+   }
+  },
+  "v6": {
+   "tokens": 3834,
+   "calls": 4,
+   "by_model": {
+    "qwen3:4b": 3496,
+    "qwen3:8b": 338
+   }
+  },
+  "v1": {
+   "tokens": 3870,
+   "calls": 4,
+   "by_model": {
+    "qwen3:4b": 3514,
+    "qwen3:8b": 356
+   }
+  },
+  "d3": {
+   "tokens": 774,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 774
+   }
+  },
+  "v4": {
+   "tokens": 1286,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1286
+   }
+  },
+  "d2": {
+   "tokens": 3848,
+   "calls": 3,
+   "by_model": {
+    "qwen3:4b": 3542,
+    "qwen3:8b": 306
+   }
+  },
+  "c3": {
+   "tokens": 1021,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1021
+   }
+  }
+ },
+ "dlq_tokens": 7704,
+ "coord_messages": 260,
+ "coord_bytes": 21486,
+ "kill": null,
+ "recovery": null,
+ "completion_ts": {
+  "c5": 1794725005.3,
+  "d4": 1794725169.4,
+  "v2": 1794725299.6,
+  "v3": 1794725393.7,
+  "d5": 1794725529.9,
+  "c2": 1794725581.9,
+  "c6": 1794725624.0,
+  "c4": 1794725980.4,
+  "c1": 1794726214.6,
+  "d1": 1794726322.8,
+  "v5": 1794726458.9,
+  "d6": 1794726535.0,
+  "d3": 1794727013.6,
+  "v4": 1794727153.7,
+  "v1": 1794727564.2,
+  "v6": 1794727564.2,
+  "c3": 1794727868.5,
+  "d2": 1794728078.7
+ },
+ "shipped_wrong": [],
+ "checker_defects": [],
+ "deadlettered": [
+  "v1",
+  "v6"
+ ],
+ "early_dlq": [],
+ "task_states": {
+  "c1": "done",
+  "c2": "done",
+  "c3": "done",
+  "c4": "done",
+  "c5": "done",
+  "c6": "done",
+  "d1": "done",
+  "d2": "done",
+  "d3": "done",
+  "d4": "done",
+  "d5": "done",
+  "d6": "done",
+  "v1": "deadletter",
+  "v2": "done",
+  "v3": "done",
+  "v4": "done",
+  "v5": "done",
+  "v6": "deadletter"
+ },
+ "deadletter_records": {
+  "v1": {
+   "task": "v1",
+   "kind": "VERIFY",
+   "state": "deadletter",
+   "attempts": [
+    {
+     "attempt": 1,
+     "worker": "c3",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run2/staging/v1__c3__a1.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 2,
+     "worker": "c2",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run2/staging/v1__c2__a2.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 3,
+     "worker": "c2",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run2/staging/v1__c2__a3.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 4,
+     "worker": "c2",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run2/staging/v1__c2__a4.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    }
+   ],
+   "final_reason": "WRONG_VERDICT_3;WRONG_VERDICT_3;WRONG_VERDICT_3;WRONG_VERDICT_3",
+   "surfaced_at": 1794727563.9457505
+  },
+  "v6": {
+   "task": "v6",
+   "kind": "VERIFY",
+   "state": "deadletter",
+   "attempts": [
+    {
+     "attempt": 1,
+     "worker": "c1",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run2/staging/v6__c1__a1.txt",
+     "late": false,
+     "validator_reasons": [
+      "UNPARSEABLE"
+     ]
+    },
+    {
+     "attempt": 2,
+     "worker": "c3",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run2/staging/v6__c3__a2.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1",
+      "WRONG_VERDICT_2"
+     ]
+    },
+    {
+     "attempt": 3,
+     "worker": "c2",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run2/staging/v6__c2__a3.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 4,
+     "worker": "c2",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run2/staging/v6__c2__a4.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    }
+   ],
+   "final_reason": "UNPARSEABLE;WRONG_VERDICT_1;WRONG_VERDICT_2;WRONG_VERDICT_3;WRONG_VERDICT_3",
+   "surfaced_at": 1794727562.932863
+  }
+ },
+ "leak_flagged_attempts": [
+  {
+   "task": "v6",
+   "attempt": 1,
+   "model": "qwen3:4b"
+  },
+  {
+   "task": "d2",
+   "attempt": 2,
+   "model": "qwen3:4b"
+  }
+ ],
+ "mirror": {
+  "posted": 130,
+  "total_events": 130,
+  "errors": 0,
+  "lag_at_exit": 0,
+  "finished": true,
+  "channel": "fleet-bus-v3-c2ref-run2",
+  "bytes_posted": 6877
+ },
+ "first_verdicts": {
+  "c5": true,
+  "d4": true,
+  "v2": true,
+  "v3": true,
+  "d5": true,
+  "c2": true,
+  "c6": true,
+  "d1": false,
+  "c4": true,
+  "d6": false,
+  "c1": true,
+  "v5": true,
+  "v6": false,
+  "v1": false,
+  "d3": true,
+  "v4": true,
+  "d2": false,
+  "c3": true
+ },
+ "duplicated_merges": {},
+ "dlq_reconstructed": 0,
+ "kill_test_planned": false,
+ "pre_load": {
+  "l1": 17.24,
+  "l5": 17.78,
+  "l15": 19.0
+ },
+ "calibration": [
+  {
+   "model": "qwen3:8b",
+   "wall_s": 5.1,
+   "eval_count": 102,
+   "tok_s": 19.89
+  },
+  {
+   "model": "qwen3:4b",
+   "wall_s": 84.0,
+   "eval_count": 708,
+   "tok_s": 8.43
+  }
+ ],
+ "load_trace": [
+  {
+   "t": 0.0,
+   "l1": 19.5,
+   "l5": 18.27,
+   "l15": 19.05
+  },
+  {
+   "t": 60.0,
+   "l1": 20.01,
+   "l5": 18.65,
+   "l15": 19.13
+  },
+  {
+   "t": 120.0,
+   "l1": 19.17,
+   "l5": 18.65,
+   "l15": 19.11
+  },
+  {
+   "t": 180.0,
+   "l1": 19.96,
+   "l5": 18.99,
+   "l15": 19.2
+  },
+  {
+   "t": 240.0,
+   "l1": 20.11,
+   "l5": 19.23,
+   "l15": 19.27
+  },
+  {
+   "t": 300.0,
+   "l1": 19.52,
+   "l5": 19.16,
+   "l15": 19.24
+  },
+  {
+   "t": 360.0,
+   "l1": 20.01,
+   "l5": 19.39,
+   "l15": 19.32
+  },
+  {
+   "t": 420.0,
+   "l1": 19.31,
+   "l5": 19.28,
+   "l15": 19.28
+  },
+  {
+   "t": 480.0,
+   "l1": 20.1,
+   "l5": 19.5,
+   "l15": 19.36
+  },
+  {
+   "t": 540.0,
+   "l1": 20.43,
+   "l5": 19.7,
+   "l15": 19.44
+  },
+  {
+   "t": 600.0,
+   "l1": 20.72,
+   "l5": 19.93,
+   "l15": 19.54
+  },
+  {
+   "t": 660.0,
+   "l1": 21.22,
+   "l5": 20.22,
+   "l15": 19.66
+  },
+  {
+   "t": 720.0,
+   "l1": 21.4,
+   "l5": 20.46,
+   "l15": 19.79
+  },
+  {
+   "t": 780.0,
+   "l1": 21.44,
+   "l5": 20.65,
+   "l15": 19.9
+  },
+  {
+   "t": 840.0,
+   "l1": 21.29,
+   "l5": 20.75,
+   "l15": 19.98
+  },
+  {
+   "t": 900.0,
+   "l1": 20.75,
+   "l5": 20.7,
+   "l15": 20.01
+  },
+  {
+   "t": 960.0,
+   "l1": 20.07,
+   "l5": 20.47,
+   "l15": 19.97
+  },
+  {
+   "t": 1020.0,
+   "l1": 20.39,
+   "l5": 20.47,
+   "l15": 20.01
+  },
+  {
+   "t": 1080.0,
+   "l1": 19.23,
+   "l5": 20.18,
+   "l15": 19.94
+  },
+  {
+   "t": 1140.0,
+   "l1": 20.08,
+   "l5": 20.25,
+   "l15": 19.98
+  },
+  {
+   "t": 1200.0,
+   "l1": 20.46,
+   "l5": 20.31,
+   "l15": 20.02
+  },
+  {
+   "t": 1260.0,
+   "l1": 20.72,
+   "l5": 20.4,
+   "l15": 20.07
+  },
+  {
+   "t": 1320.0,
+   "l1": 20.28,
+   "l5": 20.24,
+   "l15": 20.03
+  },
+  {
+   "t": 1380.0,
+   "l1": 20.64,
+   "l5": 20.35,
+   "l15": 20.08
+  },
+  {
+   "t": 1440.0,
+   "l1": 19.82,
+   "l5": 20.14,
+   "l15": 20.02
+  },
+  {
+   "t": 1500.0,
+   "l1": 20.37,
+   "l5": 20.26,
+   "l15": 20.07
+  },
+  {
+   "t": 1560.0,
+   "l1": 20.29,
+   "l5": 20.26,
+   "l15": 20.09
+  },
+  {
+   "t": 1620.0,
+   "l1": 20.22,
+   "l5": 20.25,
+   "l15": 20.09
+  },
+  {
+   "t": 1680.0,
+   "l1": 20.47,
+   "l5": 20.31,
+   "l15": 20.12
+  },
+  {
+   "t": 1740.0,
+   "l1": 20.37,
+   "l5": 20.31,
+   "l15": 20.13
+  },
+  {
+   "t": 1800.0,
+   "l1": 20.38,
+   "l5": 20.34,
+   "l15": 20.16
+  },
+  {
+   "t": 1860.0,
+   "l1": 20.25,
+   "l5": 20.31,
+   "l15": 20.15
+  },
+  {
+   "t": 1920.0,
+   "l1": 20.24,
+   "l5": 20.3,
+   "l15": 20.16
+  },
+  {
+   "t": 1980.0,
+   "l1": 20.6,
+   "l5": 20.39,
+   "l15": 20.2
+  },
+  {
+   "t": 2040.0,
+   "l1": 20.64,
+   "l5": 20.43,
+   "l15": 20.22
+  },
+  {
+   "t": 2100.0,
+   "l1": 20.56,
+   "l5": 20.44,
+   "l15": 20.24
+  },
+  {
+   "t": 2160.0,
+   "l1": 20.64,
+   "l5": 20.47,
+   "l15": 20.26
+  },
+  {
+   "t": 2220.0,
+   "l1": 20.72,
+   "l5": 20.51,
+   "l15": 20.29
+  },
+  {
+   "t": 2280.0,
+   "l1": 19.8,
+   "l5": 20.23,
+   "l15": 20.2
+  },
+  {
+   "t": 2340.0,
+   "l1": 21.76,
+   "l5": 20.73,
+   "l15": 20.38
+  },
+  {
+   "t": 2400.0,
+   "l1": 21.32,
+   "l5": 20.8,
+   "l15": 20.42
+  },
+  {
+   "t": 2460.0,
+   "l1": 19.79,
+   "l5": 20.48,
+   "l15": 20.34
+  },
+  {
+   "t": 2520.0,
+   "l1": 20.26,
+   "l5": 20.49,
+   "l15": 20.36
+  },
+  {
+   "t": 2580.0,
+   "l1": 20.69,
+   "l5": 20.58,
+   "l15": 20.4
+  },
+  {
+   "t": 2640.0,
+   "l1": 20.73,
+   "l5": 20.63,
+   "l15": 20.43
+  },
+  {
+   "t": 2700.0,
+   "l1": 21.17,
+   "l5": 20.8,
+   "l15": 20.5
+  },
+  {
+   "t": 2760.0,
+   "l1": 21.03,
+   "l5": 20.82,
+   "l15": 20.52
+  },
+  {
+   "t": 2820.0,
+   "l1": 20.87,
+   "l5": 20.82,
+   "l15": 20.55
+  },
+  {
+   "t": 2880.0,
+   "l1": 19.87,
+   "l5": 20.5,
+   "l15": 20.45
+  },
+  {
+   "t": 2940.0,
+   "l1": 20.27,
+   "l5": 20.5,
+   "l15": 20.45
+  },
+  {
+   "t": 3000.0,
+   "l1": 19.25,
+   "l5": 20.07,
+   "l15": 20.3
+  },
+  {
+   "t": 3060.0,
+   "l1": 20.72,
+   "l5": 20.34,
+   "l15": 20.38
+  },
+  {
+   "t": 3120.0,
+   "l1": 21.11,
+   "l5": 20.51,
+   "l15": 20.43
+  }
+ ]
+}

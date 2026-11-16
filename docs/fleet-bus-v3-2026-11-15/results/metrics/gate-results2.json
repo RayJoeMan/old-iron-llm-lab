@@ -1,0 +1,115 @@
+{
+ "gate_pass": true,
+ "legs": [
+  {
+   "leg": "flood",
+   "pass": true,
+   "counts": {
+    "queued": 0,
+    "claimed": 0,
+    "validating": 0,
+    "done": 1000,
+    "deadletter": 0,
+    "held": 0
+   },
+   "dup_claim_attempts": 0,
+   "merges": 1000,
+   "wall_s": 15.7
+  },
+  {
+   "leg": "dup_enqueue_storm",
+   "pass": true,
+   "total_tasks": 18,
+   "counts": {
+    "queued": 18,
+    "claimed": 0,
+    "validating": 0,
+    "done": 0,
+    "deadletter": 0,
+    "held": 0
+   },
+   "exitcodes": [
+    0,
+    0
+   ]
+  },
+  {
+   "leg": "kill_restart",
+   "pass": true,
+   "counts": {
+    "queued": 0,
+    "claimed": 0,
+    "validating": 0,
+    "done": 100,
+    "deadletter": 0,
+    "held": 0
+   },
+   "dup_merges": 0,
+   "reaps": 1,
+   "in_progress_at_kill": true
+  },
+  {
+   "leg": "policy_ladder",
+   "pass": true,
+   "counts": {
+    "queued": 0,
+    "claimed": 0,
+    "validating": 0,
+    "done": 0,
+    "deadletter": 6,
+    "held": 0
+   },
+   "deadletter_events": 6,
+   "fail_requeues": 18,
+   "result_rows": 24,
+   "attempts": {
+    "p-0": 4,
+    "p-1": 4,
+    "p-2": 4,
+    "p-3": 4,
+    "p-4": 4,
+    "p-5": 4
+   }
+  },
+  {
+   "leg": "reconciliation",
+   "pass": true,
+   "ledger": {
+    "queued": 0,
+    "claimed": 0,
+    "validating": 0,
+    "done": 1000,
+    "deadletter": 0,
+    "held": 0
+   },
+   "replay": {
+    "queued": 0,
+    "claimed": 0,
+    "validating": 0,
+    "done": 1000,
+    "deadletter": 0,
+    "held": 0
+   },
+   "policy": {
+    "pass": true,
+    "ledger": {
+     "queued": 0,
+     "claimed": 0,
+     "validating": 0,
+     "done": 0,
+     "deadletter": 6,
+     "held": 0
+    },
+    "replay": {
+     "queued": 0,
+     "claimed": 0,
+     "validating": 0,
+     "done": 0,
+     "deadletter": 6,
+     "held": 0
+    }
+   }
+  }
+ ],
+ "tmp": "/tmp/gatec2-_lkb2qc9"
+}

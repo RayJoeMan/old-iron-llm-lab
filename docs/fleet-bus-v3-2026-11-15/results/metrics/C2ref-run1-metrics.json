@@ -1,0 +1,649 @@
+{
+ "arm": "C2",
+ "run": 1,
+ "wall_s": 2628.9,
+ "tasks_total": 18,
+ "tasks_terminal": 16,
+ "tasks_accounted": 18,
+ "lost": [],
+ "duplicated_work": {},
+ "validator_pass_first_attempt": {
+  "v3": true,
+  "d6": true,
+  "d4": true,
+  "v4": true,
+  "d1": true,
+  "c4": true,
+  "v2": true,
+  "c3": false,
+  "d3": true,
+  "v1": false,
+  "c2": true,
+  "d2": false,
+  "v5": true,
+  "d5": true,
+  "v6": false,
+  "c5": true,
+  "c1": true,
+  "c6": true
+ },
+ "validator_pass_count": 14,
+ "validator_scored": 18,
+ "work_tokens": 24623,
+ "coord_tokens": 0,
+ "work_calls": 26,
+ "coord_calls": 0,
+ "failed_calls": 0,
+ "coord_prompt_chars": 0,
+ "work_prompt_chars": 11357,
+ "work_tokens_by_model": {
+  "qwen3:4b": 23841,
+  "qwen3:8b": 782
+ },
+ "calls_by_model": {
+  "qwen3:4b": 21,
+  "qwen3:8b": 5
+ },
+ "per_task_tokens": {
+  "v3": {
+   "tokens": 787,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 787
+   }
+  },
+  "d6": {
+   "tokens": 1144,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1144
+   }
+  },
+  "d4": {
+   "tokens": 1309,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1309
+   }
+  },
+  "v4": {
+   "tokens": 1732,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1732
+   }
+  },
+  "d1": {
+   "tokens": 1092,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1092
+   }
+  },
+  "c4": {
+   "tokens": 431,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 431
+   }
+  },
+  "v2": {
+   "tokens": 766,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 766
+   }
+  },
+  "c3": {
+   "tokens": 3438,
+   "calls": 3,
+   "by_model": {
+    "qwen3:4b": 3350,
+    "qwen3:8b": 88
+   }
+  },
+  "d3": {
+   "tokens": 898,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 898
+   }
+  },
+  "v1": {
+   "tokens": 2113,
+   "calls": 3,
+   "by_model": {
+    "qwen3:4b": 1757,
+    "qwen3:8b": 356
+   }
+  },
+  "c2": {
+   "tokens": 511,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 511
+   }
+  },
+  "d2": {
+   "tokens": 2850,
+   "calls": 2,
+   "by_model": {
+    "qwen3:4b": 2850
+   }
+  },
+  "v5": {
+   "tokens": 1340,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1340
+   }
+  },
+  "d5": {
+   "tokens": 899,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 899
+   }
+  },
+  "v6": {
+   "tokens": 3834,
+   "calls": 4,
+   "by_model": {
+    "qwen3:4b": 3496,
+    "qwen3:8b": 338
+   }
+  },
+  "c5": {
+   "tokens": 601,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 601
+   }
+  },
+  "c1": {
+   "tokens": 384,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 384
+   }
+  },
+  "c6": {
+   "tokens": 494,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 494
+   }
+  }
+ },
+ "dlq_tokens": 5947,
+ "coord_messages": 248,
+ "coord_bytes": 20422,
+ "kill": {
+  "ts": 1794718629.8136723,
+  "victim_worker": "c3",
+  "task": "v1",
+  "pid": 1746952
+ },
+ "recovery": {
+  "task": "v1",
+  "recovered": true,
+  "latency_s": 770.8
+ },
+ "completion_ts": {
+  "v3": 1794718009.2,
+  "d6": 1794718131.3,
+  "d4": 1794718269.4,
+  "v4": 1794718469.6,
+  "d1": 1794718583.8,
+  "c4": 1794718629.8,
+  "v2": 1794718711.9,
+  "d3": 1794719000.2,
+  "v1": 1794719400.7,
+  "c3": 1794719400.7,
+  "c2": 1794719450.7,
+  "v5": 1794719797.1,
+  "d5": 1794719889.2,
+  "d2": 1794719999.3,
+  "c5": 1794720265.6,
+  "c1": 1794720301.7,
+  "v6": 1794720505.9,
+  "c6": 1794720554.0
+ },
+ "shipped_wrong": [],
+ "checker_defects": [],
+ "deadlettered": [
+  "v1",
+  "v6"
+ ],
+ "early_dlq": [],
+ "task_states": {
+  "c1": "done",
+  "c2": "done",
+  "c3": "done",
+  "c4": "done",
+  "c5": "done",
+  "c6": "done",
+  "d1": "done",
+  "d2": "done",
+  "d3": "done",
+  "d4": "done",
+  "d5": "done",
+  "d6": "done",
+  "v1": "deadletter",
+  "v2": "done",
+  "v3": "done",
+  "v4": "done",
+  "v5": "done",
+  "v6": "deadletter"
+ },
+ "deadletter_records": {
+  "v1": {
+   "task": "v1",
+   "kind": "VERIFY",
+   "state": "deadletter",
+   "attempts": [
+    {
+     "attempt": 2,
+     "worker": "c1",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run1/staging/v1__c1__a2.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 3,
+     "worker": "c2",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run1/staging/v1__c2__a3.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 4,
+     "worker": "c2",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run1/staging/v1__c2__a4.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    }
+   ],
+   "final_reason": "WRONG_VERDICT_3;WRONG_VERDICT_3;WRONG_VERDICT_3",
+   "surfaced_at": 1794719400.056484
+  },
+  "v6": {
+   "task": "v6",
+   "kind": "VERIFY",
+   "state": "deadletter",
+   "attempts": [
+    {
+     "attempt": 1,
+     "worker": "c2",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run1/staging/v6__c2__a1.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1",
+      "WRONG_VERDICT_2"
+     ]
+    },
+    {
+     "attempt": 2,
+     "worker": "c1",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run1/staging/v6__c1__a2.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1",
+      "WRONG_VERDICT_2"
+     ]
+    },
+    {
+     "attempt": 3,
+     "worker": "c1",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run1/staging/v6__c1__a3.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 4,
+     "worker": "c1",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3/runs/C2-run1/staging/v6__c1__a4.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    }
+   ],
+   "final_reason": "WRONG_VERDICT_1;WRONG_VERDICT_2;WRONG_VERDICT_1;WRONG_VERDICT_2;WRONG_VERDICT_3;WRONG_VERDICT_3",
+   "surfaced_at": 1794720503.9821308
+  }
+ },
+ "leak_flagged_attempts": [],
+ "mirror": {
+  "posted": 124,
+  "total_events": 124,
+  "errors": 0,
+  "lag_at_exit": 0,
+  "finished": true,
+  "channel": "fleet-bus-v3-c2ref-run1",
+  "bytes_posted": 6529
+ },
+ "first_verdicts": {
+  "v3": true,
+  "d6": true,
+  "d4": true,
+  "v4": true,
+  "d1": true,
+  "c4": true,
+  "v2": true,
+  "c3": false,
+  "d3": true,
+  "v1": false,
+  "c2": true,
+  "d2": false,
+  "v5": true,
+  "d5": true,
+  "v6": false,
+  "c5": true,
+  "c1": true,
+  "c6": true
+ },
+ "duplicated_merges": {},
+ "dlq_reconstructed": 0,
+ "kill_test_planned": true,
+ "pre_load": {
+  "l1": 15.4,
+  "l5": 16.1,
+  "l15": 17.32
+ },
+ "calibration": [
+  {
+   "model": "qwen3:8b",
+   "wall_s": 6.8,
+   "eval_count": 124,
+   "tok_s": 18.15
+  },
+  {
+   "model": "qwen3:4b",
+   "wall_s": 168.8,
+   "eval_count": 1388,
+   "tok_s": 8.22
+  }
+ ],
+ "load_trace": [
+  {
+   "t": 0.0,
+   "l1": 19.96,
+   "l5": 17.68,
+   "l15": 17.69
+  },
+  {
+   "t": 60.0,
+   "l1": 19.78,
+   "l5": 17.99,
+   "l15": 17.8
+  },
+  {
+   "t": 120.0,
+   "l1": 19.54,
+   "l5": 18.23,
+   "l15": 17.89
+  },
+  {
+   "t": 180.0,
+   "l1": 19.96,
+   "l5": 18.59,
+   "l15": 18.04
+  },
+  {
+   "t": 240.0,
+   "l1": 19.29,
+   "l5": 18.62,
+   "l15": 18.08
+  },
+  {
+   "t": 300.0,
+   "l1": 20.03,
+   "l5": 18.95,
+   "l15": 18.23
+  },
+  {
+   "t": 360.0,
+   "l1": 18.8,
+   "l5": 18.87,
+   "l15": 18.26
+  },
+  {
+   "t": 420.0,
+   "l1": 19.81,
+   "l5": 19.15,
+   "l15": 18.39
+  },
+  {
+   "t": 480.0,
+   "l1": 20.08,
+   "l5": 19.36,
+   "l15": 18.51
+  },
+  {
+   "t": 540.0,
+   "l1": 20.28,
+   "l5": 19.55,
+   "l15": 18.63
+  },
+  {
+   "t": 600.0,
+   "l1": 20.24,
+   "l5": 19.69,
+   "l15": 18.74
+  },
+  {
+   "t": 660.0,
+   "l1": 20.82,
+   "l5": 19.95,
+   "l15": 18.89
+  },
+  {
+   "t": 720.0,
+   "l1": 20.03,
+   "l5": 19.8,
+   "l15": 18.9
+  },
+  {
+   "t": 780.0,
+   "l1": 20.34,
+   "l5": 19.95,
+   "l15": 19.01
+  },
+  {
+   "t": 840.0,
+   "l1": 20.57,
+   "l5": 20.08,
+   "l15": 19.12
+  },
+  {
+   "t": 900.0,
+   "l1": 20.39,
+   "l5": 20.12,
+   "l15": 19.2
+  },
+  {
+   "t": 960.0,
+   "l1": 20.42,
+   "l5": 20.19,
+   "l15": 19.28
+  },
+  {
+   "t": 1020.0,
+   "l1": 19.72,
+   "l5": 20.02,
+   "l15": 19.28
+  },
+  {
+   "t": 1080.0,
+   "l1": 19.49,
+   "l5": 19.99,
+   "l15": 19.33
+  },
+  {
+   "t": 1140.0,
+   "l1": 21.5,
+   "l5": 20.48,
+   "l15": 19.54
+  },
+  {
+   "t": 1200.0,
+   "l1": 22.26,
+   "l5": 20.89,
+   "l15": 19.74
+  },
+  {
+   "t": 1260.0,
+   "l1": 22.29,
+   "l5": 21.14,
+   "l15": 19.9
+  },
+  {
+   "t": 1320.0,
+   "l1": 21.86,
+   "l5": 21.19,
+   "l15": 19.99
+  },
+  {
+   "t": 1380.0,
+   "l1": 21.86,
+   "l5": 21.32,
+   "l15": 20.11
+  },
+  {
+   "t": 1440.0,
+   "l1": 21.61,
+   "l5": 21.35,
+   "l15": 20.2
+  },
+  {
+   "t": 1500.0,
+   "l1": 21.62,
+   "l5": 21.41,
+   "l15": 20.3
+  },
+  {
+   "t": 1560.0,
+   "l1": 21.71,
+   "l5": 21.47,
+   "l15": 20.39
+  },
+  {
+   "t": 1620.0,
+   "l1": 22.05,
+   "l5": 21.63,
+   "l15": 20.51
+  },
+  {
+   "t": 1680.0,
+   "l1": 21.75,
+   "l5": 21.65,
+   "l15": 20.6
+  },
+  {
+   "t": 1740.0,
+   "l1": 19.93,
+   "l5": 21.21,
+   "l15": 20.52
+  },
+  {
+   "t": 1800.0,
+   "l1": 20.32,
+   "l5": 21.1,
+   "l15": 20.52
+  },
+  {
+   "t": 1860.0,
+   "l1": 20.44,
+   "l5": 20.99,
+   "l15": 20.52
+  },
+  {
+   "t": 1920.0,
+   "l1": 20.34,
+   "l5": 20.88,
+   "l15": 20.52
+  },
+  {
+   "t": 1980.0,
+   "l1": 20.21,
+   "l5": 20.74,
+   "l15": 20.49
+  },
+  {
+   "t": 2040.0,
+   "l1": 20.18,
+   "l5": 20.64,
+   "l15": 20.47
+  },
+  {
+   "t": 2100.0,
+   "l1": 20.44,
+   "l5": 20.62,
+   "l15": 20.47
+  },
+  {
+   "t": 2160.0,
+   "l1": 20.55,
+   "l5": 20.61,
+   "l15": 20.47
+  },
+  {
+   "t": 2220.0,
+   "l1": 20.33,
+   "l5": 20.53,
+   "l15": 20.45
+  },
+  {
+   "t": 2280.0,
+   "l1": 18.79,
+   "l5": 20.16,
+   "l15": 20.34
+  },
+  {
+   "t": 2340.0,
+   "l1": 19.91,
+   "l5": 20.23,
+   "l15": 20.35
+  },
+  {
+   "t": 2400.0,
+   "l1": 20.26,
+   "l5": 20.26,
+   "l15": 20.35
+  },
+  {
+   "t": 2460.0,
+   "l1": 20.58,
+   "l5": 20.35,
+   "l15": 20.38
+  },
+  {
+   "t": 2520.0,
+   "l1": 20.36,
+   "l5": 20.33,
+   "l15": 20.37
+  },
+  {
+   "t": 2580.0,
+   "l1": 20.42,
+   "l5": 20.36,
+   "l15": 20.37
+  }
+ ]
+}

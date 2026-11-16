@@ -1,0 +1,563 @@
+{
+ "arm": "C3",
+ "run": 2,
+ "wall_s": 1643.9,
+ "tasks_total": 18,
+ "tasks_terminal": 16,
+ "tasks_accounted": 18,
+ "lost": [],
+ "duplicated_work": {},
+ "validator_pass_first_attempt": {
+  "nc2": true,
+  "nv5": true,
+  "nc3": true,
+  "nc5": false,
+  "nv4": true,
+  "nd2": true,
+  "nc4": true,
+  "nc1": true,
+  "nd6": true,
+  "nv3": false,
+  "nd4": true,
+  "nd5": true,
+  "nc6": true,
+  "nv2": false,
+  "nv1": true,
+  "nv6": true,
+  "nd3": true,
+  "nd1": false
+ },
+ "validator_pass_count": 14,
+ "validator_scored": 18,
+ "work_tokens": 16910,
+ "coord_tokens": 0,
+ "work_calls": 26,
+ "coord_calls": 0,
+ "failed_calls": 0,
+ "coord_prompt_chars": 0,
+ "work_prompt_chars": 11463,
+ "work_tokens_by_model": {
+  "qwen3:8b": 2102,
+  "qwen3:4b": 14808
+ },
+ "calls_by_model": {
+  "qwen3:8b": 15,
+  "qwen3:4b": 11
+ },
+ "per_task_tokens": {
+  "nc2": {
+   "tokens": 89,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 89
+   }
+  },
+  "nv5": {
+   "tokens": 162,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 162
+   }
+  },
+  "nc3": {
+   "tokens": 86,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 86
+   }
+  },
+  "nc5": {
+   "tokens": 593,
+   "calls": 2,
+   "by_model": {
+    "qwen3:8b": 85,
+    "qwen3:4b": 508
+   }
+  },
+  "nv4": {
+   "tokens": 149,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 149
+   }
+  },
+  "nd2": {
+   "tokens": 1752,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1752
+   }
+  },
+  "nc4": {
+   "tokens": 88,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 88
+   }
+  },
+  "nc1": {
+   "tokens": 88,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 88
+   }
+  },
+  "nd6": {
+   "tokens": 807,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 807
+   }
+  },
+  "nv3": {
+   "tokens": 3818,
+   "calls": 4,
+   "by_model": {
+    "qwen3:8b": 330,
+    "qwen3:4b": 3488
+   }
+  },
+  "nd4": {
+   "tokens": 1111,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 1111
+   }
+  },
+  "nd5": {
+   "tokens": 995,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 995
+   }
+  },
+  "nc6": {
+   "tokens": 83,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 83
+   }
+  },
+  "nv2": {
+   "tokens": 3810,
+   "calls": 4,
+   "by_model": {
+    "qwen3:8b": 326,
+    "qwen3:4b": 3484
+   }
+  },
+  "nv1": {
+   "tokens": 176,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 176
+   }
+  },
+  "nv6": {
+   "tokens": 166,
+   "calls": 1,
+   "by_model": {
+    "qwen3:8b": 166
+   }
+  },
+  "nd3": {
+   "tokens": 894,
+   "calls": 1,
+   "by_model": {
+    "qwen3:4b": 894
+   }
+  },
+  "nd1": {
+   "tokens": 2043,
+   "calls": 2,
+   "by_model": {
+    "qwen3:4b": 1769,
+    "qwen3:8b": 274
+   }
+  }
+ },
+ "dlq_tokens": 7628,
+ "coord_messages": 244,
+ "coord_bytes": 20239,
+ "kill": null,
+ "recovery": null,
+ "completion_ts": {
+  "nc2": 1794736873.1,
+  "nv5": 1794736875.1,
+  "nv4": 1794736877.1,
+  "nc3": 1794736877.1,
+  "nd2": 1794737071.3,
+  "nc4": 1794737073.3,
+  "nc1": 1794737073.3,
+  "nd6": 1794737151.4,
+  "nc5": 1794737209.4,
+  "nd4": 1794737325.6,
+  "nd5": 1794737427.7,
+  "nc6": 1794737429.7,
+  "nv1": 1794737431.7,
+  "nv6": 1794737627.9,
+  "nd3": 1794737718.0,
+  "nd1": 1794738122.5,
+  "nv3": 1794738316.7,
+  "nv2": 1794738515.0
+ },
+ "shipped_wrong": [],
+ "checker_defects": [],
+ "deadlettered": [
+  "nv2",
+  "nv3"
+ ],
+ "early_dlq": [],
+ "task_states": {
+  "nc1": "done",
+  "nc2": "done",
+  "nc3": "done",
+  "nc4": "done",
+  "nc5": "done",
+  "nc6": "done",
+  "nd1": "done",
+  "nd2": "done",
+  "nd3": "done",
+  "nd4": "done",
+  "nd5": "done",
+  "nd6": "done",
+  "nv1": "done",
+  "nv2": "deadletter",
+  "nv3": "deadletter",
+  "nv4": "done",
+  "nv5": "done",
+  "nv6": "done"
+ },
+ "deadletter_records": {
+  "nv3": {
+   "task": "nv3",
+   "kind": "VERIFY",
+   "state": "deadletter",
+   "attempts": [
+    {
+     "attempt": 1,
+     "worker": "c1",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3-confirm/runs/C3-run2/staging/nv3__c1__a1.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1"
+     ]
+    },
+    {
+     "attempt": 2,
+     "worker": "c3",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3-confirm/runs/C3-run2/staging/nv3__c3__a2.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1",
+      "WRONG_VERDICT_2",
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 3,
+     "worker": "c3",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3-confirm/runs/C3-run2/staging/nv3__c3__a3.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1"
+     ]
+    },
+    {
+     "attempt": 4,
+     "worker": "c2",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3-confirm/runs/C3-run2/staging/nv3__c2__a4.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1",
+      "WRONG_VERDICT_2",
+      "WRONG_VERDICT_3"
+     ]
+    }
+   ],
+   "final_reason": "WRONG_VERDICT_1;WRONG_VERDICT_1;WRONG_VERDICT_2;WRONG_VERDICT_3;WRONG_VERDICT_1;WRONG_VERDICT_1;WRONG_VERDICT_2;WRONG_VERDICT_3",
+   "early_dlq": false,
+   "early_dlq_reason_set": null,
+   "surfaced_at": 1794738315.2672951
+  },
+  "nv2": {
+   "task": "nv2",
+   "kind": "VERIFY",
+   "state": "deadletter",
+   "attempts": [
+    {
+     "attempt": 1,
+     "worker": "c1",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3-confirm/runs/C3-run2/staging/nv2__c1__a1.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 2,
+     "worker": "c1",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3-confirm/runs/C3-run2/staging/nv2__c1__a2.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1",
+      "WRONG_VERDICT_2"
+     ]
+    },
+    {
+     "attempt": 3,
+     "worker": "c1",
+     "model": "qwen3:8b",
+     "artifact_path": "/home/general/fleet-bus-ab3-confirm/runs/C3-run2/staging/nv2__c1__a3.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_3"
+     ]
+    },
+    {
+     "attempt": 4,
+     "worker": "c1",
+     "model": "qwen3:4b",
+     "artifact_path": "/home/general/fleet-bus-ab3-confirm/runs/C3-run2/staging/nv2__c1__a4.txt",
+     "late": false,
+     "validator_reasons": [
+      "WRONG_VERDICT_1",
+      "WRONG_VERDICT_2"
+     ]
+    }
+   ],
+   "final_reason": "WRONG_VERDICT_3;WRONG_VERDICT_1;WRONG_VERDICT_2;WRONG_VERDICT_3;WRONG_VERDICT_1;WRONG_VERDICT_2",
+   "early_dlq": false,
+   "early_dlq_reason_set": null,
+   "surfaced_at": 1794738514.7600088
+  }
+ },
+ "leak_flagged_attempts": [],
+ "mirror": {
+  "posted": 122,
+  "total_events": 122,
+  "errors": 0,
+  "lag_at_exit": 0,
+  "finished": true,
+  "channel": "fleet-bus-v3-confirm-c3-run2",
+  "bytes_posted": 6555
+ },
+ "first_verdicts": {
+  "nc2": true,
+  "nv5": true,
+  "nc3": true,
+  "nc5": false,
+  "nv4": true,
+  "nd2": true,
+  "nc4": true,
+  "nc1": true,
+  "nd6": true,
+  "nv3": false,
+  "nd4": true,
+  "nd5": true,
+  "nc6": true,
+  "nv2": false,
+  "nv1": true,
+  "nv6": true,
+  "nd3": true,
+  "nd1": false
+ },
+ "duplicated_merges": {},
+ "dlq_reconstructed": 0,
+ "kill_test_planned": false,
+ "pre_load": {
+  "l1": 17.17,
+  "l5": 18.25,
+  "l15": 19.37
+ },
+ "calibration": [
+  {
+   "model": "qwen3:8b",
+   "wall_s": 4.7,
+   "eval_count": 94,
+   "tok_s": 19.85
+  },
+  {
+   "model": "qwen3:4b",
+   "wall_s": 194.1,
+   "eval_count": 1600,
+   "tok_s": 8.24
+  }
+ ],
+ "load_trace": [
+  {
+   "t": 0.0,
+   "l1": 20.87,
+   "l5": 19.34,
+   "l15": 19.56
+  },
+  {
+   "t": 60.0,
+   "l1": 20.82,
+   "l5": 19.66,
+   "l15": 19.67
+  },
+  {
+   "t": 120.0,
+   "l1": 20.61,
+   "l5": 19.81,
+   "l15": 19.72
+  },
+  {
+   "t": 180.0,
+   "l1": 20.48,
+   "l5": 19.93,
+   "l15": 19.77
+  },
+  {
+   "t": 240.0,
+   "l1": 20.99,
+   "l5": 20.24,
+   "l15": 19.89
+  },
+  {
+   "t": 300.0,
+   "l1": 20.63,
+   "l5": 20.28,
+   "l15": 19.93
+  },
+  {
+   "t": 360.0,
+   "l1": 21.84,
+   "l5": 20.65,
+   "l15": 20.08
+  },
+  {
+   "t": 420.0,
+   "l1": 22.86,
+   "l5": 21.1,
+   "l15": 20.27
+  },
+  {
+   "t": 480.0,
+   "l1": 21.22,
+   "l5": 20.95,
+   "l15": 20.27
+  },
+  {
+   "t": 540.0,
+   "l1": 21.35,
+   "l5": 21.01,
+   "l15": 20.33
+  },
+  {
+   "t": 600.0,
+   "l1": 21.7,
+   "l5": 21.26,
+   "l15": 20.46
+  },
+  {
+   "t": 660.0,
+   "l1": 20.88,
+   "l5": 21.1,
+   "l15": 20.46
+  },
+  {
+   "t": 720.0,
+   "l1": 20.93,
+   "l5": 21.08,
+   "l15": 20.49
+  },
+  {
+   "t": 780.0,
+   "l1": 20.83,
+   "l5": 21.01,
+   "l15": 20.5
+  },
+  {
+   "t": 840.0,
+   "l1": 21.34,
+   "l5": 21.11,
+   "l15": 20.56
+  },
+  {
+   "t": 900.0,
+   "l1": 20.12,
+   "l5": 20.73,
+   "l15": 20.46
+  },
+  {
+   "t": 960.0,
+   "l1": 20.47,
+   "l5": 20.71,
+   "l15": 20.47
+  },
+  {
+   "t": 1020.0,
+   "l1": 20.85,
+   "l5": 20.82,
+   "l15": 20.52
+  },
+  {
+   "t": 1080.0,
+   "l1": 20.73,
+   "l5": 20.79,
+   "l15": 20.53
+  },
+  {
+   "t": 1140.0,
+   "l1": 20.66,
+   "l5": 20.75,
+   "l15": 20.54
+  },
+  {
+   "t": 1200.0,
+   "l1": 21.22,
+   "l5": 20.84,
+   "l15": 20.58
+  },
+  {
+   "t": 1260.0,
+   "l1": 19.22,
+   "l5": 20.41,
+   "l15": 20.45
+  },
+  {
+   "t": 1320.0,
+   "l1": 19.87,
+   "l5": 20.38,
+   "l15": 20.44
+  },
+  {
+   "t": 1380.0,
+   "l1": 20.55,
+   "l5": 20.48,
+   "l15": 20.47
+  },
+  {
+   "t": 1440.0,
+   "l1": 20.44,
+   "l5": 20.46,
+   "l15": 20.46
+  },
+  {
+   "t": 1500.0,
+   "l1": 20.29,
+   "l5": 20.4,
+   "l15": 20.44
+  },
+  {
+   "t": 1560.0,
+   "l1": 20.48,
+   "l5": 20.43,
+   "l15": 20.45
+  },
+  {
+   "t": 1620.0,
+   "l1": 20.42,
+   "l5": 20.43,
+   "l15": 20.45
+  }
+ ]
+}

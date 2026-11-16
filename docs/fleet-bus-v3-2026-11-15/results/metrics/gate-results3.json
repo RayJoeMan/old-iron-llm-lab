@@ -1,0 +1,211 @@
+{
+ "gate_pass": true,
+ "legs": [
+  {
+   "leg": "regression_gate_c2",
+   "pass": true,
+   "subprocess_rc": 0
+  },
+  {
+   "leg": "routing_full_ladder",
+   "pass": true,
+   "counts": {
+    "queued": 0,
+    "claimed": 0,
+    "validating": 0,
+    "done": 0,
+    "deadletter": 3,
+    "held": 0
+   },
+   "models": {
+    "v3": [
+     "qwen3:8b",
+     "qwen3:4b",
+     "qwen3:8b",
+     "qwen3:4b"
+    ],
+    "c1": [
+     "qwen3:8b",
+     "qwen3:4b",
+     "qwen3:8b",
+     "qwen3:4b"
+    ],
+    "d3": [
+     "qwen3:4b",
+     "qwen3:8b",
+     "qwen3:4b",
+     "qwen3:8b"
+    ]
+   },
+   "early_dlq": []
+  },
+  {
+   "leg": "early_dlq_fires",
+   "pass": true,
+   "state": [
+    "deadletter",
+    2
+   ],
+   "deadletter_events": 1,
+   "early_dlq": [
+    {
+     "task": "v3",
+     "attempt": 2,
+     "reason_set": [
+      "WRONG_VERDICT_1"
+     ]
+    }
+   ],
+   "models": [
+    "qwen3:8b",
+    "qwen3:4b"
+   ]
+  },
+  {
+   "leg": "near_equal_no_fire",
+   "pass": true,
+   "state": [
+    "done",
+    3
+   ],
+   "verdicts": [
+    {
+     "task": "d3",
+     "attempt": 1,
+     "passed": false,
+     "reasons": [
+      "SHORT_SUMMARY"
+     ]
+    },
+    {
+     "task": "d3",
+     "attempt": 2,
+     "passed": false,
+     "reasons": [
+      "MISSING_FIELD",
+      "BAD_SOURCE",
+      "SHORT_SUMMARY"
+     ]
+    },
+    {
+     "task": "d3",
+     "attempt": 3,
+     "passed": true,
+     "reasons": []
+    }
+   ]
+  },
+  {
+   "leg": "nonconsecutive_no_fire",
+   "pass": true,
+   "state": [
+    "done",
+    4
+   ]
+  },
+  {
+   "leg": "canonicalization",
+   "pass": true,
+   "reordered_dup_fires": true,
+   "subset_no_fire": true,
+   "state_a": [
+    "deadletter",
+    2
+   ],
+   "state_b": [
+    "done",
+    3
+   ]
+  },
+  {
+   "leg": "transport_exclusion",
+   "pass": true,
+   "state": [
+    "done",
+    3
+   ],
+   "verdict_rows": 1,
+   "error_calls": 2
+  },
+  {
+   "leg": "late_result_fencing",
+   "pass": true,
+   "state": "deadletter",
+   "deadletter_events": 1,
+   "merge_events": 0,
+   "late_post": "recorded"
+  },
+  {
+   "leg": "coresidency_preflight",
+   "pass": true,
+   "resident": [
+    "qwen3:4b",
+    "qwen3:8b"
+   ]
+  },
+  {
+   "leg": "real_model_smoke",
+   "pass": true,
+   "items": [
+    {
+     "kind": "CLASSIFY",
+     "format_ok": true,
+     "gold_match": true,
+     "reasons": []
+    },
+    {
+     "kind": "CLASSIFY",
+     "format_ok": true,
+     "gold_match": true,
+     "reasons": []
+    },
+    {
+     "kind": "CLASSIFY",
+     "format_ok": true,
+     "gold_match": true,
+     "reasons": []
+    },
+    {
+     "kind": "CLASSIFY",
+     "format_ok": true,
+     "gold_match": true,
+     "reasons": []
+    },
+    {
+     "kind": "CLASSIFY",
+     "format_ok": true,
+     "gold_match": false,
+     "reasons": [
+      "WRONG_OR_MULTI_LABEL"
+     ]
+    },
+    {
+     "kind": "CLASSIFY",
+     "format_ok": true,
+     "gold_match": true,
+     "reasons": []
+    },
+    {
+     "kind": "VERIFY",
+     "format_ok": true,
+     "gold_match": true,
+     "reasons": []
+    },
+    {
+     "kind": "VERIFY",
+     "format_ok": true,
+     "gold_match": true,
+     "reasons": []
+    },
+    {
+     "kind": "VERIFY",
+     "format_ok": true,
+     "gold_match": true,
+     "reasons": []
+    }
+   ],
+   "gold_agreement": 8
+  }
+ ],
+ "tmp": "/tmp/gatec3-ynhp_t6_"
+}

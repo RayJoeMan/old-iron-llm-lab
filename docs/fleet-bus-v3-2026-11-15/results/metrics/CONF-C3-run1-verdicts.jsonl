@@ -1,0 +1,28 @@
+{"task": "nc5", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nv5", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nc2", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nc4", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nd2", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nv2", "attempt": 1, "passed": false, "reasons": ["WRONG_VERDICT_3"]}
+{"task": "nc6", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nd3", "attempt": 1, "passed": false, "reasons": ["SHORT_SUMMARY"]}
+{"task": "nd1", "attempt": 2, "passed": true, "reasons": []}
+{"task": "nd3", "attempt": 2, "passed": true, "reasons": []}
+{"task": "nc3", "attempt": 1, "passed": false, "reasons": ["WRONG_OR_MULTI_LABEL"]}
+{"task": "nv6", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nv2", "attempt": 2, "passed": false, "reasons": ["WRONG_VERDICT_1", "WRONG_VERDICT_2"]}
+{"task": "nc3", "attempt": 2, "passed": false, "reasons": ["WRONG_OR_MULTI_LABEL"]}
+{"task": "nv2", "attempt": 3, "passed": false, "reasons": ["WRONG_VERDICT_3"]}
+{"task": "nv3", "attempt": 1, "passed": false, "reasons": ["WRONG_VERDICT_1"]}
+{"task": "nd5", "attempt": 1, "passed": false, "reasons": ["MISSING_FIELD", "BAD_SOURCE", "SHORT_SUMMARY"]}
+{"task": "nv2", "attempt": 4, "passed": false, "reasons": ["WRONG_VERDICT_1", "WRONG_VERDICT_2"]}
+{"task": "nd5", "attempt": 2, "passed": true, "reasons": []}
+{"task": "nv1", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nv3", "attempt": 2, "passed": false, "reasons": ["WRONG_VERDICT_1", "WRONG_VERDICT_2", "WRONG_VERDICT_3"]}
+{"task": "nv4", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nv3", "attempt": 3, "passed": false, "reasons": ["WRONG_VERDICT_1"]}
+{"task": "nc1", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nd6", "attempt": 1, "passed": true, "reasons": []}
+{"task": "nv3", "attempt": 4, "passed": true, "reasons": []}
+{"task": "nd4", "attempt": 1, "passed": false, "reasons": ["MISSING_FIELD", "BAD_SOURCE", "SHORT_SUMMARY"]}
+{"task": "nd4", "attempt": 2, "passed": true, "reasons": []}

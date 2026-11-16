@@ -1,0 +1,24 @@
+{"task": "v3", "attempt": 1, "passed": true, "reasons": []}
+{"task": "v4", "attempt": 1, "passed": true, "reasons": []}
+{"task": "d6", "attempt": 1, "passed": true, "reasons": []}
+{"task": "c4", "attempt": 1, "passed": true, "reasons": []}
+{"task": "v1", "attempt": 1, "passed": false, "reasons": ["WRONG_VERDICT_3"]}
+{"task": "v2", "attempt": 1, "passed": true, "reasons": []}
+{"task": "d4", "attempt": 1, "passed": true, "reasons": []}
+{"task": "c3", "attempt": 1, "passed": true, "reasons": []}
+{"task": "v1", "attempt": 2, "passed": false, "reasons": ["WRONG_VERDICT_3"]}
+{"task": "d1", "attempt": 2, "passed": true, "reasons": []}
+{"task": "c2", "attempt": 1, "passed": true, "reasons": []}
+{"task": "d3", "attempt": 1, "passed": true, "reasons": []}
+{"task": "v5", "attempt": 1, "passed": true, "reasons": []}
+{"task": "d2", "attempt": 1, "passed": false, "reasons": ["SHORT_SUMMARY"]}
+{"task": "v6", "attempt": 1, "passed": false, "reasons": ["WRONG_VERDICT_3"]}
+{"task": "d2", "attempt": 2, "passed": true, "reasons": []}
+{"task": "d5", "attempt": 1, "passed": false, "reasons": ["SHORT_SUMMARY"]}
+{"task": "c5", "attempt": 1, "passed": true, "reasons": []}
+{"task": "d5", "attempt": 2, "passed": true, "reasons": []}
+{"task": "c1", "attempt": 1, "passed": true, "reasons": []}
+{"task": "c6", "attempt": 1, "passed": true, "reasons": []}
+{"task": "v6", "attempt": 2, "passed": false, "reasons": ["UNPARSEABLE"]}
+{"task": "v6", "attempt": 3, "passed": false, "reasons": ["WRONG_VERDICT_3"]}
+{"task": "v6", "attempt": 4, "passed": false, "reasons": ["WRONG_VERDICT_1", "WRONG_VERDICT_2"]}
