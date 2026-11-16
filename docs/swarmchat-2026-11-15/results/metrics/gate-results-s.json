@@ -1,0 +1,90 @@
+{
+ "gate_pass": true,
+ "cases": {
+  "a_claim_race_x20": {
+   "pass": true,
+   "detail": "20 tasks, exactly 20 generations, 20 delivered, 0 fenced",
+   "secs": 2.5
+  },
+  "b_claim_confirm": {
+   "pass": true,
+   "detail": "earlier claim blocks w1 generation entirely; w2's result delivers",
+   "secs": 9.4
+  },
+  "c_early_dlq_matrix": {
+   "pass": true,
+   "detail": "identical pair DLQs at 2 (early_dlq), differing pairs run to 4, superset delivers at 3",
+   "secs": 1.4
+  },
+  "d_fencing_after_dlq": {
+   "pass": true,
+   "detail": "post-DEADLETTER correct RESULT changes nothing (no delivery, 1 terminal event)",
+   "secs": 7.4
+  },
+  "e_lease_expiry": {
+   "pass": true,
+   "detail": "lease REQUEUE fired, second claim delivered, late RESULT fenced/ignored",
+   "secs": 35.6
+  },
+  "f_kill_recovery_full": {
+   "pass": true,
+   "detail": "worker SIGKILLed mid-generation; 18/18 accounted, killed task delivered, no dup terminals",
+   "secs": 21.0
+  },
+  "g_full_stub_checker_collect_agree": {
+   "pass": true,
+   "detail": "checker and transcript-collector agree exactly: 17 delivered-correct, v1 DLQ, 0 lost/dup",
+   "secs": 2.6
+  },
+  "h_duplicate_result": {
+   "pass": true,
+   "detail": "duplicate RESULT fenced; exactly one DELIVERED",
+   "secs": 5.3
+  },
+  "i_late_result_after_requeue": {
+   "pass": true,
+   "detail": "RESULT arriving after its epoch's lease-REQUEUE never lands; second claim's artifact stands",
+   "secs": 42.8
+  },
+  "j_result_between_verdict_and_requeue": {
+   "pass": true,
+   "detail": "racing duplicate RESULT around VERDICT/REQUEUE yields exactly one requeue, one delivery",
+   "secs": 1.3
+  },
+  "k_stale_claim": {
+   "pass": true,
+   "detail": "stale-epoch CLAIM ignored by workers and checker; attempt 2 delivers",
+   "secs": 1.4
+  },
+  "l_checker_crash_restart": {
+   "pass": true,
+   "detail": "checker killed twice mid-run; transcript replay recovers; 6 delivered, 0 dup terminals",
+   "secs": 1.4
+  },
+  "m_dispatcher_crash_restart": {
+   "pass": true,
+   "detail": "dispatcher killed after ~9 TASKs; relaunch posts exactly the missing 9 (18 unique)",
+   "secs": 6.3
+  },
+  "n_stopped_worker_catchup": {
+   "pass": true,
+   "detail": "SIGSTOPped worker misses the wake, catches up on full re-read after SIGCONT, delivers",
+   "secs": 8.2
+  },
+  "o_foreign_and_malformed": {
+   "pass": true,
+   "detail": "fake VERDICT/DELIVERED, malformed line, and non-worker CLAIM all ignored; real flow rules",
+   "secs": 1.4
+  },
+  "p_payload_fidelity_harness": {
+   "pass": true,
+   "detail": "6525-char artifact round-trips the harness byte-exact (sha256 match)",
+   "secs": 1.3
+  },
+  "q_kill_victim_selection": {
+   "pass": true,
+   "detail": "variant 1 -> w2 on t1; variant 2 -> w1 on t1",
+   "secs": 0.6
+  }
+ }
+}

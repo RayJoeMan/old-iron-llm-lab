@@ -1,0 +1,224 @@
+{
+ "arm": "S",
+ "run": 2,
+ "wall_s": 1194.4,
+ "tasks_total": 18,
+ "tasks_terminal": 18,
+ "tasks_accounted": 18,
+ "lost": [],
+ "duplicated_tasks": [],
+ "delivered": [
+  "c1",
+  "c2",
+  "c3",
+  "c4",
+  "c5",
+  "c6",
+  "d1",
+  "d2",
+  "d3",
+  "d4",
+  "d5",
+  "d6",
+  "v2",
+  "v3",
+  "v4",
+  "v5"
+ ],
+ "dlq": [
+  "v1",
+  "v6"
+ ],
+ "shipped_wrong": [],
+ "correct": 16,
+ "correct_by_class": {
+  "CLASSIFY": 6,
+  "DRAFT": 6,
+  "VERIFY": 4
+ },
+ "validator_pass_first_attempt": {
+  "c1": true,
+  "c2": true,
+  "c3": true,
+  "c4": true,
+  "c5": true,
+  "c6": true,
+  "d1": true,
+  "d2": false,
+  "d3": true,
+  "d4": true,
+  "d5": true,
+  "d6": true,
+  "v1": false,
+  "v2": true,
+  "v3": true,
+  "v4": true,
+  "v5": true,
+  "v6": false
+ },
+ "work_tokens": 15915,
+ "coord_tokens": 0,
+ "work_calls": 26,
+ "coord_calls": 0,
+ "failed_calls": 3,
+ "work_prompt_chars": 11958,
+ "work_tokens_by_model": {
+  "qwen3:8b": 1928,
+  "qwen3:4b": 13987
+ },
+ "calls_by_model": {
+  "qwen3:8b": 14,
+  "qwen3:4b": 12
+ },
+ "per_task_tokens": {
+  "v1": {
+   "tokens": 1935,
+   "calls": 3,
+   "attempts": {
+    "1": 1,
+    "2": 2
+   }
+  },
+  "c1": {
+   "tokens": 84,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "v2": {
+   "tokens": 151,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "v3": {
+   "tokens": 149,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "c5": {
+   "tokens": 84,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "c3": {
+   "tokens": 88,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "c6": {
+   "tokens": 80,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "c4": {
+   "tokens": 84,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "v4": {
+   "tokens": 153,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "v6": {
+   "tokens": 3834,
+   "calls": 5,
+   "attempts": {
+    "1": 1,
+    "2": 2,
+    "3": 1,
+    "4": 1
+   }
+  },
+  "c2": {
+   "tokens": 81,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "v5": {
+   "tokens": 158,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "d4": {
+   "tokens": 1781,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "d3": {
+   "tokens": 1546,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "d5": {
+   "tokens": 1757,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "d6": {
+   "tokens": 896,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "d1": {
+   "tokens": 983,
+   "calls": 1,
+   "attempts": {
+    "1": 1
+   }
+  },
+  "d2": {
+   "tokens": 2071,
+   "calls": 3,
+   "attempts": {
+    "1": 2,
+    "2": 1
+   }
+  }
+ },
+ "fenced_results": 0,
+ "extra_generations_beyond_first_per_attempt": 3,
+ "terminal_events_total": 18,
+ "transcript_messages": 223,
+ "transcript_bytes": 58404,
+ "message_type_counts": {
+  "TASK": 18,
+  "CLAIM": 65,
+  "RESULT": 23,
+  "VERDICT": 23,
+  "REQUEUE": 5,
+  "DELIVERED": 16,
+  "RENEW": 71,
+  "DEADLETTER": 2
+ },
+ "ignored_messages": 0,
+ "silent_hold_suspects": [],
+ "channel": "swarmtest-s2-run2"
+}
