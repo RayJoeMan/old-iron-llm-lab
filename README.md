@@ -1,10 +1,12 @@
 # Fleet Findings — measured results from a home-lab LLM fleet
 
 > **Status: PUBLIC (since 2026-11-06).** Contents current as of
-> 2026-11-12: the Mint adoption batches and the 2026-11-12 Mint
+> 2026-11-15: the Mint adoption batches and the 2026-11-12 Mint
 > rulings, the Fortress certified batteries R10–R17 plus the
-> Tranche A session-variable battery (F-70 → F-100), and one
-> explicitly INTERIM page for the still-running R19 battery.
+> Tranche A session-variable battery (F-70 → F-100), one
+> explicitly INTERIM page for the still-running R19 battery, and
+> the fleet task-delivery program records (Fleet Bus A/B, v2,
+> v3, and SwarmChat) under `docs/`.
 
 ## What this is
 
@@ -74,7 +76,7 @@ evals/          descriptions of the frozen eval sets behind the findings
 
 See `STRUCTURE.md` for the full tree and the conventions for adding an entry.
 
-## Contents (2026-11-12)
+## Contents (2026-11-15)
 
 - **87 finding entries** in `findings/` (see `findings/README.md`
   for the index):
@@ -106,6 +108,26 @@ See `STRUCTURE.md` for the full tree and the conventions for adding an entry.
     proof) is still running; its completed arms are published as
     a single interim entry with no F-numbers, pending the
     battery audit.
+- **Fleet task-delivery program records** in `docs/` — the
+  pre-registered A/B program behind the fleet's two adopted
+  task-delivery systems, scored on tokens per error-free job
+  (all tokens counted):
+  - **Fleet Bus A/B (2026-11-13)** — the original head-to-head
+    against the file queue.
+  - **Fleet Bus v2 (2026-11-14)** — COMPLETE, **NO WIN 7/8**
+    (the wall-clock leg failed at 1.488x); published in full
+    as a negative result.
+  - **Fleet Bus v3 (2026-11-15)** — **ADOPTED**: cleared the
+    pre-registered bar 8/8 twice against the file queue —
+    942 vs 1,512 tokens per error-free job, shipped-wrong
+    0 vs 8, wall 0.617x. The validator-feedback experiment
+    is filed inside it as a closed negative result.
+  - **SwarmChat (2026-11-15)** — **ADOPTED** on an all-fresh
+    confirmation: 808.94 vs 812.12 tokens per error-free job
+    against the Fleet Bus v3 reference, 34 correct each,
+    0 shipped-wrong, 0 lost. Its V1 run failed on a harness
+    fault (4 lost, scored not excused) and is published
+    in full alongside the v2 parity fix.
 - **Platform pages settled for both machines** — the Fortress
   page records the current (2026-11-10) fingerprint and the
   2026-11-08 fingerprint the R10–R17 findings cite.
